@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/one_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/text_margin"
+        android:paddingBottom="@dimen/text_margin"
+        android:text="1级标签:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tab_tv_name"
+        style="@style/AppTextWhite"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="(1级标签将作为首页展示分类标准，限选1项)"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/one_tab"
+        app:layout_constraintStart_toEndOf="@+id/one_tab"
+        app:layout_constraintTop_toTopOf="@+id/one_tab" />
+
+    <LinearLayout
+        android:id="@+id/rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/content_margin"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/one_tab"
+        app:layout_constraintTop_toBottomOf="@+id/one_tab"/>
+
+
+    <TextView
+        android:id="@+id/two_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/content_margin"
+        android:text="2级标签:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/rg"
+        app:layout_constraintTop_toBottomOf="@+id/rg" />
+
+    <com.moxun.tagcloudlib.view.TagCloudView
+        android:id="@+id/tabcloud_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoScrollMode="uniform"
+        app:layout_constraintLeft_toLeftOf="@+id/two_tab"
+        app:layout_constraintTop_toBottomOf="@+id/two_tab"
+        app:radiusPercent="0.5"/>
+
+
+    <Button
+        android:id="@+id/btn_post"
+        style="@style/AppBtn"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginTop="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:text="@string/confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabcloud_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

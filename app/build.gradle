@@ -1,0 +1,205 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+
+    signingConfigs {
+        release {
+            storeFile file('..\\release.keystore.jks')
+            keyAlias 'iskyun'
+            storePassword 'TianYun2022..'
+            keyPassword 'TianYun2022..'
+        }
+        debug {
+            storeFile file('..\\release.keystore.jks')
+            keyAlias 'iskyun'
+            storePassword 'TianYun2022..'
+            keyPassword 'TianYun2022..'
+        }
+    }
+    Properties properties = new Properties()
+    InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream();
+    properties.load(inputStream)
+
+    compileSdk 32
+
+    aaptOptions.cruncherEnabled = false
+    //aaptOptions.useNewCruncher = false
+
+    defaultConfig {
+        applicationId "com.iskyun.im"
+        minSdk 21
+        targetSdk 32
+        versionCode 7
+        versionName "1.1.4"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "AUTH_SECRET", '"d6TzbYmh2v8ap+8JD4lPaKqui3O43exsszTHt1FvyZLBtet6TKWOxXnjFpwlb5aEa9Y7C4WvghUEHicMFiv4Sz3snaiSYn3hHVE4Dp8bDQ27rymRtsYd7qleAzaJDapjeutD/VY0q78T2eR6Lm5sqLGFKjNxyLNmJcfh0qQObOaXheI2FQeRxAeoIcs+A+Z7mfp/UNi9PnSNSeu4G0q9gIXqH3jFc/NWv8N96RFfFCb9DOY+NK4D2w29N+5VfE6hQ8n7eKFi0lUf/nllyypCMGwsWoXOXXahb7Bme+hvQ1TwCXb2TelZ2g=="'
+        buildConfigField "String", "WX_APP_ID", '"wx2547adbf32d6e948"'
+
+        manifestPlaceholders = [EASEMOB_APPKEY: properties.getProperty("EASEMOB_APPKEY", "1158220526094551#huachao"),
+                                BAIDU_APPKEY  : properties.getProperty("BAIDU_LOCATION_APPKEY", "hLBIO1VnhSa1GsP4XsRG36E5GfQaHSl8"),
+                                SHARE_TRACE_KEY  : properties.getProperty("SHARE_TRACE_KEY", "919a70a6d9f32a9a")]
+
+
+        //指定room.schemaLocation生成的文件路径  处理Room 警告 Schema export Error
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi-v7a", /*"x86", "x86_64",*/ "arm64-v8a"
+        }
+        externalNativeBuild {
+            ndkBuild {
+                abiFilters "armeabi-v7a", /*"x86", "x86_64",*/ "arm64-v8a"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", '"http://127.0.0.1:8080/huachao/"'
+            //buildConfigField "String", "API_URL", '"https://www.ihuachao.com/huachao/"'
+            signingConfig signingConfigs.release
+            //debuggable true
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            buildConfigField "String", "API_URL", '"http://127.0.0.1:8080/huachao/"'
+            //buildConfigField "String", "API_URL", '"http://192.168.2.20:8080/huachao/"'
+            //buildConfigField "String", "API_URL", '"https://www.ihuachao.com/huachao/"'
+        }
+
+    }
+
+    /*
+     *多渠道打包， 包不会很多就不用地三方打包渠道了
+     * start
+     */
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            //build/outputs
+            outputFileName = "android_${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+        }
+    }
+    //gradle assembleRelease
+    flavorDimensions "versionCode"
+    productFlavors {
+        huachao {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+    }
+    /*end*/
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding {
+        enabled = true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation project(path: ':ease-im-kit')
+    implementation project(path: ':ease-call-kit')
+    implementation project(path: ':easyPhotos')
+    implementation project(path: ':tiui-androidx')
+
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+    //
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.5.1'
+    implementation 'androidx.navigation:navigation-ui:2.5.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.room:room-runtime:2.4.3'
+
+
+    annotationProcessor "androidx.room:room-compiler:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
+    //
+
+    //implementation 'io.hyphenate:ease-call-kit:3.9.3'
+
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    //友盟
+    implementation 'com.umeng.umsdk:common:9.4.7'
+    implementation 'com.umeng.umsdk:asms:1.4.1'
+    implementation 'com.umeng.umsdk:apm:1.5.2'
+
+    //视频缓存
+    implementation 'com.danikula:videocache:2.7.1'
+    //压缩视频，图片
+    implementation 'com.iceteck.silicompressorr:silicompressor:2.2.4'
+    //1.1.22 没声音  不要升级
+    implementation('com.googlecode.mp4parser:isoparser:1.0.6') {
+        exclude group: 'org.aspectj', module: 'aspectjrt'
+    }
+    //aliyun oss
+    implementation 'com.aliyun.dpa:oss-android-sdk:2.9.11'
+    //微信
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.15'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //implementation 'com.github.HuanTanSheng:EasyPhotos:3.1.5'
+
+    //高斯模糊
+    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+
+    implementation 'com.ycjiang:ImagePreview:2.3.5' //图片预览工具库
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    //弹窗
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:AddressPicker:4.1.7'
+    //微信语音录制
+    implementation 'com.gitee.wasdzy:AudioRecord:1.0.1'
+    //tab3d
+    implementation 'com.moxun:tagcloudlib:1.2.0'
+    //轮播图
+    implementation 'com.youth.banner:banner:2.1.0'
+    //渠道推广
+    implementation 'com.sharetrace:sharetrace-android-sdk:2.1.7'
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/view_pop_tv_num"
+            style="@style/AppText"
+            android:textSize="@dimen/sub_title_size"
+            android:textColor="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="123"/>
+
+        <TextView
+            android:id="@+id/view_pop_tv_title"
+            style="@style/AppText"
+            android:textSize="@dimen/small_size"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="@dimen/text_margin"
+            android:text="TextView" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth.AuthActivity">
+
+        <ImageView
+            android:id="@+id/auth_iv_icon_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/bg_anchor_auth_head" />
+
+        <ImageView
+            android:id="@+id/auth_iv_auth_gba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/content_margin"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/auth_iv_icon_bg"
+            app:layout_constraintStart_toStartOf="@+id/auth_iv_icon_bg"
+            app:srcCompat="@mipmap/icon_avatar_vip_tag" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_info"
+            style="@style/ListItemViewAuth"
+            android:layout_marginTop="@dimen/content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_iv_icon_bg"
+            app:list_item_content="@string/unfinished"
+            app:list_item_title="@string/perfect_information" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_mobile"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_info"
+            app:list_item_content="@string/unfinished"
+            app:list_item_title="@string/mobile_auth" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_album"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_mobile"
+            app:list_item_content="@string/unfinished"
+            app:list_item_sub_title="@string/at_least_number_four"
+            app:list_item_title="@string/perfect_album" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_identity"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_album"
+            app:list_item_content="@string/unfinished"
+            app:list_item_title="@string/identity_auth" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_video"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_identity"
+            app:list_item_content="@string/unfinished"
+            app:list_item_sub_title="@string/only_user_to_audit"
+            app:list_item_title="@string/video_auth" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_call_show"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_video"
+            app:list_item_content="@string/unfinished"
+            app:list_item_title="@string/call_show_video" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_price"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_call_show"
+            app:list_item_content="@string/unfinished"
+            app:list_item_title="@string/price_setting" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/auth_view_code"
+            style="@style/ListItemViewAuth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_price"
+            app:list_item_content="@string/unfinished"
+            app:list_item_title="@string/invitation_code" />
+
+        <TextView
+            android:id="@+id/auth_tv_invitation_tips"
+            style="@style/AppText"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/invitation_code_tips"
+            android:textColor="@color/colorContent"
+            android:textSize="@dimen/sub_title_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_view_code" />
+
+        <Button
+            android:id="@+id/auth_btn_submit"
+            style="@style/AppBtn"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:onClick="onClick"
+            android:text="@string/submit_audit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_tv_invitation_tips" />
+
+        <CheckBox
+            android:id="@+id/auth_cb_standard"
+            android:layout_width="@dimen/activity_horizontal_margin"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginTop="@dimen/content_margin"
+            android:background="@drawable/package_radio_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_btn_submit"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/auth_tv_standard"
+            style="@style/AppText"
+            android:layout_width="0dp"
+            android:text="@string/auth_promise"
+            android:textColor="@color/colorContent"
+            android:textSize="@dimen/small_size"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:layout_constraintStart_toEndOf="@+id/auth_cb_standard"
+            app:layout_constraintBottom_toBottomOf="@id/auth_cb_standard"
+            app:layout_constraintTop_toTopOf="@+id/auth_cb_standard" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/auth_tv_standard"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

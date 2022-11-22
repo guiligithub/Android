@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bg"
+            tools:context=".ui.common.RechargeActivity">
+
+            <FrameLayout
+                android:id="@+id/recharge_top_image"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@mipmap/icon_top_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recharge_view_top"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@mipmap/icon_recharge_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_top_image">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/content_margin"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/recharge_tv_amount_tip"
+                        style="@style/AppText"
+                        android:gravity="center_vertical"
+                        android:text="@string/my_diamond"
+                        android:textSize="@dimen/sub_title_size" />
+
+                    <TextView
+                        android:id="@+id/recharge_tv_amount"
+                        style="@style/AppText"
+                        android:drawablePadding="@dimen/text_margin"
+                        android:gravity="center_vertical"
+                        android:text="1245455"
+                        android:textSize="@dimen/title_size"
+                        app:drawableStartCompat="@mipmap/icon_item_recharge_diamond" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/recharge_top_divider_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recharge_tv_vip_title"
+                    style="@style/AppText"
+                    android:drawablePadding="@dimen/text_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/discount_tip"
+                    android:textSize="@dimen/small_size"
+                    app:drawableEndCompat="@mipmap/icon_svip_an_crown"
+                    app:layout_constraintBottom_toTopOf="@+id/recharge_tv_vip_content"
+                    app:layout_constraintEnd_toEndOf="@+id/recharge_tv_svip_title" />
+
+                <TextView
+                    android:id="@+id/recharge_tv_vip_content"
+                    style="@style/AppText"
+                    android:gravity="center_vertical|bottom"
+                    android:text="@string/up_92"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintBottom_toTopOf="@+id/recharge_top_divider_1"
+                    app:layout_constraintStart_toStartOf="@+id/recharge_tv_svip_title" />
+
+                <TextView
+                    android:id="@+id/recharge_tv_svip_title"
+                    style="@style/AppText"
+                    android:layout_marginEnd="@dimen/content_margin"
+                    android:drawablePadding="@dimen/text_margin"
+                    android:gravity="center_vertical|bottom"
+                    android:text="@string/svip_tip"
+                    android:textSize="@dimen/small_size"
+                    app:drawableEndCompat="@mipmap/icon_recharge_svip"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recharge_top_divider_1" />
+
+                <TextView
+                    android:id="@+id/recharge_tv_svip_content"
+                    style="@style/AppText"
+                    android:gravity="center_vertical"
+                    android:text="@string/unlock_goddess_tip"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintStart_toStartOf="@+id/recharge_tv_svip_title"
+                    app:layout_constraintTop_toBottomOf="@+id/recharge_tv_svip_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/recharge_view_recharge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/white_bg"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_view_top">
+
+                <TextView
+                    android:id="@+id/recharge_tv_my_recharge"
+                    style="@style/AppText"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/want_recharge"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/sub_title_size" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/content_margin"
+                    android:paddingEnd="@dimen/content_margin"
+                    android:paddingBottom="@dimen/content_margin"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recharge_tv_recharge_tip"
+                style="@style/AppText"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:gravity="center_vertical"
+                android:text="@string/explain"
+                android:textSize="@dimen/sub_title_size"
+                app:layout_constraintStart_toStartOf="@+id/recharge_view_recharge"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_view_recharge" />
+
+            <TextView
+                android:id="@+id/recharge_tv_recharge_tips"
+                style="@style/AppText"
+                android:gravity="center_vertical"
+                android:text="@string/recharge_explain"
+                android:textColor="@color/colorSubContent"
+                android:layout_marginTop="@dimen/view_margin"
+                android:textSize="@dimen/small_size"
+                app:layout_constraintStart_toStartOf="@+id/recharge_view_recharge"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_tv_recharge_tip" />
+
+            <TextView
+                android:id="@+id/recharge_tv_pay_way"
+                style="@style/AppText"
+                android:layout_height="@dimen/common_btn_height"
+                android:gravity="center_vertical"
+                android:text="@string/pay_way"
+                app:layout_constraintStart_toStartOf="@+id/recharge_rg_pay_way"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_tv_recharge_tips" />
+
+            <RadioGroup
+                android:id="@+id/recharge_rg_pay_way"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_tv_pay_way">
+
+                <com.iskyun.im.widget.CenterRadioButton
+                    android:id="@+id/register_rb_man"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/pay_way_item_bg"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableStart="@mipmap/icon_wx_pay"
+                    android:drawablePadding="@dimen/content_margin"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/content_margin"
+                    android:paddingBottom="@dimen/content_margin"
+                    android:text="@string/wx_payment"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/sub_title_size"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/recharge_btn_pay"
+                style="@style/AppBtn"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:text="@string/confirm_recharge"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_rg_pay_way" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recharge_btn_pay" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/tl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/tl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/setting"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/content_margin"
+                android:paddingTop="@dimen/content_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:src="@mipmap/icon_back_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tl_title"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_message"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/title_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</androidx.constraintlayout.widget.ConstraintLayout>

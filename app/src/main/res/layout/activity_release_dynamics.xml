@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/dynamic_et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="@string/release_dynamic_content"
+        android:maxLines="4"
+        android:minHeight="100dp"
+        android:paddingTop="@dimen/text_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dynamic_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dynamic_et_content"
+        app:spanCount="4" />
+
+    <LinearLayout
+        android:id="@+id/dynamic_ll_location"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="@dimen/content_margin"
+        android:background="@drawable/gray_round_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dynamic_rv">
+
+        <com.iskyun.im.widget.SkyTextView
+            android:id="@+id/dynamic_tv_location"
+            style="@style/AppText"
+            android:drawableStart="@mipmap/icon_location_gray"
+            android:drawablePadding="@dimen/text_margin"
+            android:paddingStart="@dimen/content_margin"
+            android:paddingTop="@dimen/text_margin"
+            android:paddingEnd="@dimen/content_margin"
+            android:paddingBottom="@dimen/text_margin"
+            android:text=""
+            android:textSize="@dimen/sub_title_size" />
+
+        <ImageView
+            android:id="@+id/dynamic_iv_delete_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:paddingTop="@dimen/text_margin"
+            android:paddingEnd="@dimen/content_margin"
+            android:paddingBottom="@dimen/text_margin"
+            android:src="@mipmap/icon_close_lo" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dynamic_view_divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@drawable/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dynamic_ll_location" />
+
+    <TextView
+        android:id="@+id/dynamic_tv_look_tips"
+        style="@style/AppTextBlack"
+        android:layout_height="@dimen/common_btn_height"
+        android:gravity="center_vertical"
+        android:text="@string/view_permissions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dynamic_view_divider_1" />
+
+    <TextView
+        android:id="@+id/dynamic_tv_look_content"
+        style="@style/AppTextBlack"
+        android:layout_width="0dp"
+        android:layout_marginEnd="@dimen/text_margin"
+        android:gravity="end"
+        android:text="@string/view_permission"
+        app:layout_constraintBottom_toBottomOf="@+id/dynamic_tv_look_tips"
+        app:layout_constraintEnd_toStartOf="@+id/iv_choice"
+        app:layout_constraintStart_toEndOf="@+id/dynamic_tv_look_tips"
+        app:layout_constraintTop_toTopOf="@+id/dynamic_tv_look_tips" />
+
+
+    <ImageView
+        android:id="@+id/iv_choice"
+        android:layout_width="@dimen/activity_horizontal_margin"
+        android:layout_height="@dimen/activity_horizontal_margin"
+        android:contentDescription="@string/setting"
+        android:src="@drawable/icon_backs"
+        app:layout_constraintBottom_toBottomOf="@+id/dynamic_tv_look_tips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dynamic_tv_look_tips" />
+
+    <View
+        android:id="@+id/dynamic_view_divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/divider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dynamic_tv_look_tips" />
+
+    <TextView
+        android:id="@+id/tab_tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center|bottom"
+        android:padding="@dimen/title_size"
+        android:text="@string/rule"
+        android:textSize="@dimen/small_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

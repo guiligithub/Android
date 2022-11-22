@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <View
+                android:id="@+id/verified_h_divider_1"
+                style="@style/vertical_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_album"
+                style="@style/AppText"
+                android:layout_marginStart="@dimen/content_margin"
+                android:text="@string/mine_album_explain"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/verified_h_divider_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/verified_h_divider_1" />
+
+            <TextView
+                android:id="@+id/tv_album_explains"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_margin"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/mine_album_explains"
+                android:textColor="@color/colorHint"
+                android:textSize="@dimen/sub_title_size"
+                app:layout_constraintLeft_toLeftOf="@+id/verified_h_divider_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_album" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mine_album_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingTop="@dimen/content_margin"
+                android:paddingBottom="@dimen/content_margin"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_album_explains"
+                app:layout_constraintTop_toBottomOf="@+id/tv_album_explains"
+                app:spanCount="3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/user_info_save"
+        style="@style/AppBtn"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

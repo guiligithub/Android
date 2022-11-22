@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aristocratic_privilege_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@mipmap/icon_rights_and_interests_bg"
+        android:minHeight="200dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/mine_view_bg"
+            android:layout_width="51dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/adaptive_6dp"
+            android:background="@color/gold_3"
+            app:layout_constraintBottom_toBottomOf="@+id/noble_rights_and_interests_circular_bg"
+            app:layout_constraintRight_toLeftOf="@+id/noble_rights_and_interests_circular_bg"
+            app:layout_constraintTop_toTopOf="@+id/noble_rights_and_interests_circular_bg" />
+
+        <ImageView
+            android:id="@+id/noble_rights_and_interests_circular_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/adaptive_12dp"
+            android:src="@mipmap/icon_noble_rights_and_interests_circular"
+            app:layout_constraintBottom_toBottomOf="@+id/noble_rights_and_interests_tv_title"
+            app:layout_constraintRight_toLeftOf="@+id/noble_rights_and_interests_tv_title"
+            app:layout_constraintTop_toTopOf="@+id/noble_rights_and_interests_tv_title" />
+
+
+        <TextView
+            android:id="@+id/noble_rights_and_interests_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/noble_rights_and_interests"
+            android:textColor="@color/gold_3"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/noble_rights_and_interests_circular_bg_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/adaptive_12dp"
+            android:src="@mipmap/icon_noble_rights_and_interests_circular"
+            app:layout_constraintBottom_toBottomOf="@+id/noble_rights_and_interests_tv_title"
+            app:layout_constraintLeft_toRightOf="@+id/noble_rights_and_interests_tv_title"
+            app:layout_constraintTop_toTopOf="@+id/noble_rights_and_interests_tv_title" />
+
+        <View
+            android:id="@+id/mine_view_bg_2"
+            android:layout_width="51dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/adaptive_6dp"
+            android:background="@color/gold_3"
+            app:layout_constraintBottom_toBottomOf="@+id/noble_rights_and_interests_circular_bg_2"
+            app:layout_constraintLeft_toRightOf="@+id/noble_rights_and_interests_circular_bg_2"
+            app:layout_constraintTop_toTopOf="@+id/noble_rights_and_interests_circular_bg_2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/noble_rights_and_interests_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="14dp"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintLeft_toLeftOf="@+id/noble_rights_and_interests_tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/noble_rights_and_interests_tv_title"
+            app:spanCount="4"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

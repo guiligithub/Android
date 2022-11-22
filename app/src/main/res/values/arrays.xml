@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="labels">
+        <item>涉政</item>
+        <item>涉黄</item>
+        <item>广告</item>
+        <item>辱骂</item>
+        <item>暴恐</item>
+        <item>违禁</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="emoji">
+        <item>哭</item>
+        <item>得瑟</item>
+        <item>跳舞</item>
+        <item>耸肩</item>
+        <item>Bye</item>
+        <item>升天</item>
+        <item>痴迷</item>
+        <item>晚安</item>
+        <item>爱你</item>
+        <item>拜托</item>
+        <item>No</item>
+        <item>生日快乐</item>
+        <item>哼</item>
+        <item>抓狂</item>
+        <item>扭一扭</item>
+        <item>尬舞</item>
+    </string-array>
+
+    <string-array name="gift_number_content">
+        <item>一生一世</item>
+        <item>我爱你</item>
+        <item>要抱抱</item>
+        <item>好运连连</item>
+        <item>想你</item>
+        <item>十全十美</item>
+        <item>一心一意</item>
+    </string-array>
+
+    <integer-array name="gift_number">
+        <item>1314</item>
+        <item>520</item>
+        <item>188</item>
+        <item>66</item>
+        <item>30</item>
+        <item>10</item>
+        <item>1</item>
+    </integer-array>
+
+    <string-array name="anchor_title">
+        <item>视频</item>
+        <item>详情</item>
+    </string-array>
+
+    <string-array name="occupation">
+        <item>白领</item>
+        <item>公司高管</item>
+        <item>自由职业</item>
+        <item>企业单位</item>
+        <item>事业单位</item>
+        <item>IT</item>
+        <item>互联网</item>
+        <item>金融保险</item>
+        <item>商业服务</item>
+        <item>工程制造</item>
+        <item>交通运输</item>
+        <item>文化传媒</item>
+        <item>娱乐体育</item>
+        <item>农林渔牧</item>
+        <item>学生</item>
+    </string-array>
+
+    <string-array name="emotional_state">
+        <item>单身</item>
+        <item>恋爱中</item>
+        <item>已婚</item>
+    </string-array>
+
+    <string-array name="browse_title">
+        <item>访客</item>
+        <item>粉丝</item>
+        <item>关注</item>
+    </string-array>
+
+    <string-array name="label_one">
+        <item>网红</item>
+        <item>萝莉</item>
+        <item>御姐</item>
+        <item>性感</item>
+        <item>文艺</item>
+    </string-array>
+
+    <!--vip right start-->
+    <string-array name="vip_right_title">
+        <item>私信特权</item>
+        <!--<item>免费视频</item>
+        <item>联系女神</item>
+        <item>私信特权</item>
+        <item>付费私信</item>-->
+    </string-array>
+
+    <string-array name="vip_right_content">
+        <item>文字/语音聊天免费</item>
+       <!-- <item>免费视频免费话</item>
+        <item>解锁女神联系方式</item>
+        <item>文字聊天免费</item>
+        <item>私信特权免费通话</item>-->
+    </string-array>
+
+    <string-array name="vip_right_title_color">
+        <item>#39A6FE</item>
+        <item>#CDAEFE</item>
+        <item>#F75D4A</item>
+        <item>#FFC11B</item>
+        <item>#7AC9B7</item>
+    </string-array>
+
+    <array name="vip_right_image">
+        <item>@mipmap/icon_vip_call</item>
+        <item>@mipmap/icon_vip_video</item>
+        <item>@mipmap/icon_vip_goddess</item>
+        <item>@mipmap/icon_vip_crown</item>
+        <item>@mipmap/icon_vip_message</item>
+    </array>
+    <!--vip right end-->
+
+    <!--svip right start-->
+    <string-array name="s_vip_right_title">
+        <item>免费通话</item>
+        <item>视频群聊</item>
+        <item>联系女神</item>
+        <item>私信特权</item>
+        <item>私信特权</item>
+    </string-array>
+
+    <string-array name="s_vip_right_content">
+        <item>每天赠送3分钟</item>
+        <item>邀请多位美女一起聊天</item>
+        <item>解锁女神联系方式</item>
+        <item>语音/图片视频特权</item>
+        <item>付费私信SVIP半价</item>
+    </string-array>
+
+    <string-array name="s_vip_right_title_color">
+        <item>#39A6FE</item>
+        <item>#CDAEFE</item>
+        <item>#F75D4A</item>
+        <item>#FFC11B</item>
+        <item>#7AC9B7</item>
+    </string-array>
+
+    <array name="s_vip_right_image">
+        <item>@mipmap/icon_vip_call</item>
+        <item>@mipmap/icon_vip_video</item>
+        <item>@mipmap/icon_vip_goddess</item>
+        <item>@mipmap/icon_vip_crown</item>
+        <item>@mipmap/icon_vip_message</item>
+    </array>
+    <!--vip right end-->
+
+</resources>

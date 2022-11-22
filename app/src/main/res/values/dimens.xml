@@ -1,0 +1,78 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="view_margin">8dp</dimen>
+    <dimen name="content_margin">10dp</dimen>
+    <dimen name="text_margin">5dp</dimen>
+    <dimen name="activity_release_dynamic">10dp</dimen>
+
+    <dimen name="tab_margin">8dp</dimen>
+    <dimen name="divider">0.5dp</dimen>
+    <dimen name="tag_divider">1dp</dimen>
+
+    <dimen name="nav_msg_size">14dp</dimen>
+    <dimen name="toolbar_height">44dp</dimen>
+    <dimen name="tab_indicator_height">3dp</dimen>
+    <dimen name="tab_indicator_width">20dp</dimen>
+
+    <dimen name="padding">10dp</dimen>
+    <dimen name="margin">10dp</dimen>
+    <dimen name="register_margin">20dp</dimen>
+    <dimen name="grid_decoration_width">3dp</dimen>
+    <dimen name="gift_decoration_width">3dp</dimen>
+
+    <dimen name="tag_height">30dp</dimen>
+    <dimen name="vip_recharge_radius">24dp</dimen>
+    <dimen name="button_margin">40dp</dimen>
+    <dimen name="button_margin_with_padding">24dp</dimen>
+    <dimen name="rounded_radius">5dp</dimen>
+
+
+    <dimen name="dp0">0dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="avatar_height">65dp</dimen>
+
+
+    <dimen name="title_size">18sp</dimen>
+    <dimen name="large_size">20sp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="content_size">16sp</dimen>
+    <dimen name="sub_title_size">14sp</dimen>
+    <dimen name="small_size">12sp</dimen>
+    <dimen name="least_size">10sp</dimen>
+
+    <dimen name="login_view_height">80dp</dimen>
+    <dimen name="login_view_heights">50dp</dimen>
+    <dimen name="edit_height">48dp</dimen>
+    <dimen name="common_btn_height">48dp</dimen>
+    <dimen name="common_tv_height">36dp</dimen>
+    <dimen name="common_btn_radius">25dp</dimen>
+
+    <dimen name="identity_height">100dp</dimen>
+    <dimen name="recharge_top_margin">26dp</dimen>
+
+    <!--dialog-->
+    <dimen name="dialog_title_size">20sp</dimen>
+    <dimen name="dialog_middle_size">18sp</dimen>
+    <dimen name="dialog_btn_size">16sp</dimen>
+    <dimen name="dialog_title_margin_top">34dp</dimen>
+    <dimen name="dialog_title_margin_bottom">24dp</dimen>
+    <dimen name="dialog_title_gone_margin_bottom">70dp</dimen>
+    <dimen name="dialog_title_gone_margin_top">70dp</dimen>
+    <dimen name="dialog_middle_margin_bottom">38dp</dimen>
+    <dimen name="dialog_middle_margin_left">31dp</dimen>
+    <dimen name="dialog_middle_margin_right">31dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+
+    <dimen name="text_with_bg_width">80dp</dimen>
+
+
+    <dimen name="recall_dimen_4">4dp</dimen>
+    <dimen name="recall_dimen">8dp</dimen>
+    <dimen name="recall_dimen_256">256dp</dimen>
+
+</resources>

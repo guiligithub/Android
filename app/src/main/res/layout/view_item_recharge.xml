@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_item_recharge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_selector_bg">
+
+        <ImageView
+            android:id="@+id/item_recharge_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@mipmap/icon_item_recharge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_recharge_tv_give_amount"
+            style="@style/AppText"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:text=""
+            android:textColor="#C1700E"
+            android:textSize="@dimen/small_size"
+            app:layout_constraintBottom_toTopOf="@+id/item_recharge_tv_amount"
+            app:layout_constraintEnd_toEndOf="@+id/item_recharge_tv_amount"
+            app:layout_constraintStart_toStartOf="@+id/item_recharge_tv_amount" />
+
+        <TextView
+            android:id="@+id/item_recharge_tv_amount"
+            style="@style/AppTextWhite"
+            android:layout_marginTop="25dp"
+            android:drawablePadding="3dp"
+            android:gravity="center_vertical"
+            android:text=""
+            app:drawableStartCompat="@mipmap/icon_item_recharge_diamond"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_recharge_tv_price"
+            style="@style/AppText"
+            android:text=""
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/sub_title_size"
+            app:layout_constraintEnd_toEndOf="@+id/item_recharge_tv_amount"
+            app:layout_constraintStart_toStartOf="@+id/item_recharge_tv_amount"
+            app:layout_constraintTop_toBottomOf="@+id/item_recharge_tv_amount" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/item_recharge_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="item_recharge_image,item_recharge_tv_amount,
+            item_recharge_tv_give_amount,item_recharge_tv_price" />
+
+        <ImageView
+            android:id="@+id/item_vip_recharge_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/content_margin"
+            android:src="@mipmap/icon_vip_item_yuanbao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_vip_recharge_tv_vip_name"
+            style="@style/AppText"
+            android:text="text"
+            android:textColor="#7E5D33"
+            android:textSize="@dimen/sub_title_size"
+            android:layout_marginBottom="36dp"
+            app:layout_constraintEnd_toEndOf="@+id/item_vip_recharge_image"
+            app:layout_constraintStart_toStartOf="@+id/item_vip_recharge_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_vip_recharge_tv_vip_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text"
+            android:textColor="#7E5D33"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/item_vip_recharge_image"
+            app:layout_constraintStart_toStartOf="@+id/item_vip_recharge_image"
+            app:layout_constraintTop_toBottomOf="@+id/item_vip_recharge_tv_vip_name" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/item_vip_recharge_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="item_vip_recharge_image,item_vip_recharge_tv_vip_name,item_vip_recharge_tv_vip_price" />
+
+        <ImageView
+            android:id="@+id/item_s_vip_recharge_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/content_margin"
+            android:src="@mipmap/icon_item_s_vip_image"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_s_vip_recharge_tv_vip_name"
+            style="@style/AppTextWhite"
+            android:text=""
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/item_s_vip_recharge_tv_vip_price"
+            app:layout_constraintEnd_toEndOf="@+id/item_vip_recharge_image"
+            app:layout_constraintStart_toStartOf="@+id/item_vip_recharge_image" />
+
+        <TextView
+            android:id="@+id/item_s_vip_recharge_tv_vip_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:text="3223"
+            android:textColor="#381673"
+            android:textSize="@dimen/small_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/item_vip_recharge_image"
+            app:layout_constraintStart_toStartOf="@+id/item_vip_recharge_image" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/item_s_vip_recharge_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="item_s_vip_recharge_image,item_s_vip_recharge_tv_vip_name,
+                item_s_vip_recharge_tv_vip_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

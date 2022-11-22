@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_info_nsv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mine.UserInfoActivity">
+
+        <com.hyphenate.easeui.widget.EaseImageView
+            android:id="@+id/user_info_iv_avatar"
+            android:layout_width="@dimen/adaptive_60dp"
+            android:layout_height="@dimen/adaptive_60dp"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            app:ease_shape_type="round"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/user_info_view_nick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/em_empty_photo" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_nick"
+            style="@style/ListItemView"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_iv_avatar"
+            app:list_item_content="山竹"
+            app:list_item_icon="@mipmap/icon_user_edit"
+            app:list_item_title="@string/nick" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_age"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_nick"
+            app:list_item_title="@string/age" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_sex"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_age"
+            app:list_item_content="@string/man"
+            app:list_item_sub_title="@string/unchangeable_symbol"
+            app:list_item_title="@string/sex" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_wechat"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_sex"
+            app:list_item_content=""
+            app:list_item_icon="@mipmap/icon_user_edit"
+            app:list_item_title="@string/wechat" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_job"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_wechat"
+            app:list_item_content="@string/unfilled"
+            app:list_item_title="@string/job" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_city"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_job"
+            app:list_item_content="@string/unfilled"
+            app:list_item_title="@string/city" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_height"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_city"
+            app:list_item_content="@string/unfilled"
+            app:list_item_title="@string/height" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_emotion"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_height"
+            app:list_item_content="@string/unfilled"
+            app:list_item_title="@string/emotion" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/user_info_view_tag"
+            style="@style/ListItemView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_emotion"
+            app:list_item_content="@string/unfilled"
+            app:list_item_title="@string/tag" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/user_info_edit"
+            style="@style/AppEdit"
+            android:textColor="@color/colorText"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:gravity="top"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:maxLines="2"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:background="@drawable/white_gray_radius_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_view_tag"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/user_info_tv_count"
+            style="@style/AppText"
+            android:textSize="@dimen/small_size"
+            android:textColor="@color/colorContent"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:layout_marginBottom="@dimen/content_margin"
+            android:text="10/20"
+            app:layout_constraintEnd_toEndOf="@+id/user_info_edit"
+            app:layout_constraintBottom_toBottomOf="@+id/user_info_edit"/>
+
+        <Button
+            android:id="@+id/user_info_save"
+            style="@style/AppBtn"
+            android:text="@string/save"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/button_margin"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_edit"/>
+
+        <View
+            android:id="@+id/user_info_divider"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_save"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

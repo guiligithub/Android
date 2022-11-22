@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/proposal_h_divider_1"
+        style="@style/vertical_divider"
+        android:layout_marginTop="@dimen/adaptive_15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_reporting_instructions"
+        style="@style/AppText"
+        android:layout_marginStart="@dimen/adaptive_5dp"
+        android:text="@string/problem_description"
+        android:padding="@dimen/adaptive_5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/proposal_h_divider_1"
+        app:layout_constraintTop_toTopOf="@+id/proposal_h_divider_1" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/report_info_edit"
+        style="@style/AppEdit"
+        android:textColor="@color/colorText"
+        android:textSize="13sp"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/adaptive_5dp"
+        android:gravity="top"
+        android:hint="@string/describe_the_problem_indetail"
+        android:padding="@dimen/adaptive_8dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@drawable/white_gray_radius_bg"
+        android:layout_marginStart="@dimen/adaptive_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_reporting_instructions"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/user_info_tv_count"
+        style="@style/AppText"
+        android:textSize="@dimen/small_size"
+        android:textColor="@color/colorContent"
+        android:layout_marginEnd="@dimen/content_margin"
+        android:layout_marginBottom="@dimen/content_margin"
+        android:text="0/200"
+        app:layout_constraintEnd_toEndOf="@+id/report_info_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/report_info_edit"/>
+
+    <View
+        android:id="@+id/verified_h_divider_3"
+        style="@style/vertical_divider"
+        android:layout_marginTop="@dimen/adaptive_15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_info_edit"/>
+
+    <TextView
+        android:id="@+id/tv_album_3"
+        style="@style/AppText"
+        android:text="@string/upload_screenshot"
+        android:padding="@dimen/adaptive_5dp"
+        android:layout_marginStart="@dimen/adaptive_5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/verified_h_divider_3"
+        app:layout_constraintTop_toTopOf="@+id/verified_h_divider_3" />
+    <TextView
+        android:id="@+id/screenshot_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/4"
+        android:padding="@dimen/adaptive_5dp"
+        android:textSize="@dimen/adaptive_12dp"
+        android:layout_marginEnd="@dimen/em_margin_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_album_3" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/complaint_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:padding="@dimen/dp_10"
+        app:spanCount="3"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_album_3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_album_3"
+        />
+
+    <Button
+        android:id="@+id/user_info_submit"
+        style="@style/AppBtn"
+        android:text="@string/submit"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginTop="@dimen/adaptive_15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/complaint_recyclerview"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

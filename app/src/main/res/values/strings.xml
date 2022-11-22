@@ -1,0 +1,439 @@
+<resources>
+
+    <string name="app_name">樱桃</string>
+
+    <!--home-->
+    <string name="title_home">首页</string>
+    <string name="title_dynamic">动态</string>
+    <string name="title_message">消息</string>
+    <string name="title_mine">我的</string>
+    <string name="setting">设置</string>
+    <string name="news">新人</string>
+    <string name="nearby">附近</string>
+    <string name="recommend">推荐</string>
+    <string name="five">五星</string>
+    <string name="four">四星</string>
+    <string name="three">三星</string>
+
+    <!--dynamic-->
+    <string name="title_release_dynamic">发布动态</string>
+    <string name="release_success">动态发布成功</string>
+    <string name="release_fail">动态发布失败</string>
+    <string name="release_dynamic">发布</string>
+    <string name="input_content">请输入内容</string>
+    <string name="share_picture_or_video">选择要分享的图片或视频</string>
+    <string name="release_dynamic_content">分享此刻的心情…</string>
+    <string name="view_permissions">谁可以看</string>
+    <string name="rule">上传内容杜绝政治，暴力，淫秽，广告等内容，一经发现封号处理</string>
+    <string name="view_permission">公开</string>
+    <string name="my_attention">我关注的人</string>
+    <string name="my_fans">我的粉丝</string>
+    <string name="privacy">私密</string>
+    <string name="take_picture">拍照</string>
+    <string name="dynamic_select_video">选择视频（小于15S）</string>
+    <string name="select_tips">不能同时选择视频和图片</string>
+    <string name="video_too_long_tips">视频时长超%d秒，请重新选择</string>
+    <string name="topic">话题</string>
+
+
+    <!---->
+    <string name="online">在线客服</string>
+    <string name="im_video_call">视频通话</string>
+    <string name="im_voice_call">语音通话</string>
+    <string name="call_record">通话记录</string>
+    <string name="system_message">系统消息</string>
+    <string name="online_explain">使用本app期间遇到任何问题，可直接咨询在线客服，违规情况可直接举报投诉处理</string>
+    <string name="album">相册</string>
+    <string name="video">视频</string>
+    <string name="voice">语音</string>
+    <string name="gift">礼物</string>
+    <string name="call_duration">通话时长</string>
+    <string name="msg_recall_by_self">您撤回了一条消息</string>
+    <string name="msg_recall_by_user">%1$s 撤回了一条消息</string>
+    <string name="msg_recall_by_another">%1$s 撤回了 %2$s 的一条消息</string>
+    <string name="cancel_call">取消通话</string>
+    <string name="refuse_answer">拒绝接听</string>
+    <string name="busy_line">忙线中</string>
+    <string name="no_response">无响应</string>
+    <string name="other_no_response">对方无响应</string>
+    <string name="other_equipment">已在其他设备处理</string>
+
+    <string name="diamond">钻石</string>
+    <string name="intimacy">亲密度</string>
+    <string name="look_wx">查看微信</string>
+    <string name="report">举报</string>
+    <string name="give_away">赠送</string>
+    <string name="recharge_of_give">充值 ></string>
+    <string name="recharge">充值</string>
+    <string name="my_diamond">我的钻石</string>
+    <string name="discount_tip">开通会员尊享充值折扣</string>
+    <string name="up_92">最高92折</string>
+    <string name="svip_tip">开通SVIP尊享多人视频</string>
+    <string name="unlock_goddess_tip">解锁女神联系方式</string>
+    <string name="classics_gift">经典礼物</string>
+    <string name="want_recharge">我要充值</string>
+    <string name="explain">说明</string>
+    <string name="recharge_explain">钻石属于虚拟商品，一经购买概不退还</string>
+    <string name="vip_recharge_explain">会员服务属于虚拟服务，一经购买概不退还</string>
+    <string name="vip_gift">VIP礼物</string>
+    <string name="total">共</string>
+    <string name="chat_price">%d钻/分</string>
+    <string name="video_minute">钻石/分钟</string>
+    <string name="text_minute">钻石/条</string>
+    <string name="look_wechat_content_tips">查看%s微信需要消费%d钻石\n确认消费？</string>
+    <string name="looked_wechat_content_tips">已查看了%s的微信，本次查看不需要消费钻石</string>
+    <string name="balance_is_insufficient">钻石余额不足，请充值?</string>
+    <string name="copy">复制</string>
+    <string name="copy_success">复制成功</string>
+    <string name="gift_send_success">礼物赠送成功</string>
+
+
+    <!--mine-->
+    <string name="member_center">会员中心</string>
+    <string name="user_center">个人中心</string>
+    <string name="grades">我的等级</string>
+    <string name="mine_gift">我的礼物</string>
+    <string name="mine_album">我的相册</string>
+    <string name="mine_dynamic">我的动态</string>
+    <string name="feedback">问题反馈及投诉</string>
+    <string name="secrets">撩妹秘籍</string>
+    <string name="mine_setting">我的设置</string>
+    <string name="yb_balance">元宝余额</string>
+    <string name="yb">元宝</string>
+    <string name="id">ID:</string>
+    <string name="visitor">访客</string>
+    <string name="fans">粉丝</string>
+
+    <string name="anchor_cert">主播认证</string>
+    <string name="anchor_strategy">玩法攻略</string>
+    <string name="disturb">勿扰</string>
+    <string name="invite">邀请赚钱</string>
+    <string name="face_unity">美颜设置</string>
+
+
+    <string name="brows_visitor">访客</string>
+    <string name="brows_fans">粉丝</string>
+    <string name="brows_follow">关注</string>
+    <string name="brows_no_visitor">还没有访客？</string>
+    <string name="brows_no_follow">暂无关注，快去关注心意得TA吧？</string>
+    <string name="brows_no_fans">还没有粉丝？</string>
+    <string name="action_settings">Settings</string>
+
+    <!--login-->
+    <string name="login">登录</string>
+    <string name="login_again">重新登录</string>
+    <string name="phone_login">手机登录</string>
+    <string name="send_auth_code">发送验证码</string>
+    <string name="input_phone_number">请输入您的手机号码</string>
+    <string name="input_auth_code">请输入验证码</string>
+    <string name="input_password">请输入登录密码</string>
+    <string name="wx_login">微信登录</string>
+    <string name="pwd_login">密码登录</string>
+    <string name="other_way_login">其他登录方式</string>
+    <string name="other_phone_login">其他手机登录</string>
+    <string name="read_and_agree">我已阅读并同意</string>
+    <string name="privacy_agreement">隐私协议</string>
+    <string name="terms_of_service">请同意服务条款</string>
+    <string name="sms_fail">短信发送失败</string>
+    <string name="second">秒</string>
+    <string name="register_avatar_tip">好看的头像更容易吸引异性</string>
+    <string name="nick">昵称</string>
+    <string name="age">年龄</string>
+    <string name="sex">性别</string>
+    <string name="please_select_sex">请选择性别</string>
+    <string name="select_sex">选择性别</string>
+    <string name="register_man">我是帅哥</string>
+    <string name="register_woman">我是美女</string>
+    <string name="register_tip">注册成功后，性别不可更改</string>
+    <string name="wechat">微信号</string>
+    <string name="update_success">更新成功</string>
+
+    <string name="delete">删除</string>
+    <string name="delete_conversation">删除会话</string>
+    <string name="confirm">确定</string>
+
+    <string name="cancel">取消</string>
+    <string name="blocklist">拉黑</string>
+    <string name="un_blocklist">解除拉黑</string>
+    <string name="attention">关注</string>
+    <string name="attention_ta">关注TA</string>
+    <string name="un_attention">解除关注</string>
+    <string name="followed">已关注</string>
+    <string name="clean_chat_record">清除聊天记录</string>
+    <string name="look_ta_info">查看TA的资料</string>
+    <string name="modify_remark">修改备注</string>
+
+
+    <string name="activity_label_video_call">video_call</string>
+    <string name="activity_label_multi_call">multi_call</string>
+
+    <string name="confirm_delete">确认删除？</string>
+
+    <!--userinfo-->
+    <string name="job">职业</string>
+    <string name="city">城市</string>
+    <string name="height">身高</string>
+    <string name="emotion">情感</string>
+    <string name="tag">标签</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="unchangeable">不可修改</string>
+    <string name="unchangeable_symbol">(不可修改)</string>
+    <string name="unfilled">未填</string>
+    <string name="save">保存</string>
+
+    <!--auth-->
+    <string name="auth">认证</string>
+    <string name="anchor_auth">主播认证</string>
+    <string name="go_auth">去认证</string>
+    <string name="perfect_information">完善资料</string>
+    <string name="mobile_auth">绑定手机</string>
+    <string name="binding">绑定</string>
+    <string name="perfect_album">完善相册</string>
+    <string name="at_least_number">至少%d张</string>
+    <string name="at_least_number_four">(至少4张)</string>
+    <string name="identity_auth">身份认证</string>
+    <string name="video_auth">视频认证</string>
+    <string name="only_user_to_audit">(仅审核使用)</string>
+    <string name="call_show_video">来电秀展示视频</string>
+    <string name="call_show_video_explain">来电秀展示视频说明</string>
+    <string name="price_setting">价格设置</string>
+    <string name="invitation_code">邀请码</string>
+    <string name="unfinished">未完成</string>
+    <string name="finished">已完成</string>
+    <string name="submit_audit">提交审核</string>
+    <string name="under_review">审核中</string>
+    <string name="un_pass">审核未通过</string>
+    <string name="submit">提交</string>
+    <string name="confirm_audit">确认提交</string>
+    <string name="invitation_code_tips">如您不确定邀请码，请联系</string>
+    <string name="auth_promise">提交认证即代表已阅读并承诺遵守</string>
+    <string name="auth_standard">主播管理规范</string>
+    <string name="input_invitation_code">请输入邀请码</string>
+    <string name="complete_auth_information">请完善认证信息</string>
+    <string name="not_anchor_tips">你还不是认证女神，立即去认证！</string>
+    <string name="not_vip_tips">对方是认证女神，加入VIP后开启畅聊！</string>
+    <string name="give_vip_gift_tips">您还不是VIP，无法赠送VIP礼物！</string>
+    <string name="privileges">开通VIP享9大特权，你值得拥有！</string>
+    <string name="picture_review_failed">图片审核失败</string>
+
+    <string name="video_call_price">视频通话价格</string>
+    <string name="voice_call_price">语音通话价格</string>
+    <string name="msg_price">消息价格</string>
+    <string name="look_wx_price">查看微信价格</string>
+    <string name="unselect">未选择</string>
+    <string name="upload_video">请上传视频</string>
+    <string name="auth_requirements">认证须知</string>
+
+    <string name="call_show_video_1">上传的视频仅支持MP4格式</string>
+    <string name="call_show_video_2">视频用于推荐列表展示及闪聊页面展示，务必保证视频的清晰和美观</string>
+    <string name="call_show_video_3">上传的视频必须是竖屏拍摄的，要求带美颜及配乐</string>
+    <string name="call_show_video_4">请勿上传色情、暴力、广告等视频，审核不通过的视频系统会自动删除。</string>
+    <string name="auth_video_1">上传视频，需满足光线充足，正面拍摄且要有清晰的面部展示</string>
+    <string name="auth_video_2">认证视频拍摄至少5s以上</string>
+    <string name="open_permissions">请打开对应权限</string>
+
+    <string name="verified_notice">根据国家要求，使用交友服务，需要进行实名认证。\n您的认证资料仅供审核使用，他人无法查看。</string>
+
+    <string name="verified">实名认证</string>
+    <string name="identity_front">身份证头像面</string>
+    <string name="identity_back">身份证国徽面</string>
+    <string name="identity1">(人像清晰，证件完整)</string>
+    <string name="identity2">(文字清晰，四角完整)</string>
+    <string name="select_label_one">一级标签</string>
+    <string name="select_label">个性标签</string>
+    <string name="modify_data">修改资料</string>
+
+
+    <string name="about_us">关于我们</string>
+    <string name="current_version">当前版本</string>
+    <string name="about">关于</string>
+    <string name="user_agreement">用户协议</string>
+    <string name="latest_version">已是最新版本</string>
+    <string name="agree_agreement">请同意协议</string>
+    <string name="privacy_policy">隐私权政策</string>
+    <string name="platform_code_of_conduct">平台行为规范</string>
+
+
+    <string name="copyright">Copyright©樱桃传媒</string>
+    <string name="copyright_company">湖南花巢文化传媒有限公司</string>
+    <string name="copyright1">AII Rights Reserved</string>
+
+    <string name="age_selection">年龄选择</string>
+    <string name="height_selection">身高选择(cm)</string>
+    <string name="emotional_state">情感状态</string>
+    <string name="province_and_city_selection">省市选择</string>
+    <string name="select_location">选择地点</string>
+    <string name="job_selection">职业选择</string>
+
+    <string name="headset_insert">耳机插入: %1$b, 有麦克风: %2$b</string>
+
+    <!--error or response-->
+    <string name="sms_send_fail">短信发送失败</string>
+    <string name="sms_send_success">短信发送成功</string>
+    <string name="login_fail">登录失败</string>
+    <string name="upload_fail">上传失败</string>
+    <string name="upload_success">上传成功</string>
+    <string name="delete_success">删除成功</string>
+    <string name="download_fail">下载失败</string>
+    <string name="resp_fail">请求失败</string>
+    <string name="blacklist">黑名单</string>
+    <string name="relieve">解除</string>
+    <string name="add_blocklist_success">加入黑名单成功</string>
+    <string name="add_blocklist_fail">加入黑名单失败</string>
+    <string name="remove_blocklist_fail">移除黑名单失败</string>
+    <string name="remove_blocklist_success">移除黑名单成功</string>
+
+    <!--pay-->
+
+    <string name="diamond_balance">钻石余额</string>
+    <string name="payment">支付</string>
+    <string name="go_recharge">去充值</string>
+    <string name="become_vip">成为VIP</string>
+    <string name="recharge_center">充值中心</string>
+    <string name="wx_payment">微信支付</string>
+    <string name="confirm_recharge">确认充值</string>
+    <string name="activate_now">立即开通</string>
+    <string name="s_vip">超级VIP</string>
+    <string name="order_amount">订单金额</string>
+    <string name="order_detail">订单详情</string>
+    <string name="recharge_of_common">普通充值</string>
+    <string name="recharge_of_vip">VIP充值</string>
+    <string name="order_pay">订单支付</string>
+    <string name="pay_way">支付方式</string>
+    <string name="pay_success">充值成功</string>
+    <string name="pay_fail">充值失败</string>
+    <string name="pay_cancel">取消支付</string>
+    <string name="currency_symbol">￥</string>
+    <string name="vip_right_call">免费通话</string>
+    <string name="vip_right_video">免费视频</string>
+    <string name="vip_right_goddess">联系女神</string>
+    <string name="no_open_svip">您还未开通SVIP</string>
+    <string name="opened_svip">您已开通SVIP</string>
+    <string name="opened_vip">您已开通VIP</string>
+    <string name="no_open_vip">您还未开通VIP</string>
+    <string name="vip">VIP</string>
+    <string name="day">天</string>
+    <string name="month">月</string>
+    <string name="year">年</string>
+    <string name="expire">到期</string>
+    <string name="update">立即更新</string>
+    <string name="update_version_tips">发现新版本</string>
+
+    <string name="single">单身</string>
+    <string name="in_love">恋爱中</string>
+    <string name="married">已婚</string>
+    <string name="mine_album_explain">我的相册说明</string>
+    <string name="mine_album_explains">1.上传的相册仅支持jpg、png格式的图片；\n2.上传的图片尺寸建议为1：1的正方形；\n3.图片用于您的详情页面照片展示，所以务必保证图片的清晰和美观；\n4.请勿上传色情、暴力、广告等图片，审核不通过的图片系统会自动删除。</string>
+
+    <!--setting-->
+    <string name="logout">退出登录</string>
+    <string name="logout_fail">退出失败</string>
+
+
+    <string name="mine_complaint">举报投诉</string>
+    <string name="reported_user_id">被举报用户ID: </string>
+    <string name="contact_number">本人联系电话: </string>
+    <string name="reason_for_reporting">请选择举报的原因 </string>
+    <string name="required">（必填）</string>
+    <string name="mandatory">（必选）</string>
+    <string name="spread_pornography">传播色情，暴力，反动等不良信息</string>
+    <string name="advertisement">广告</string>
+    <string name="swindle">诈骗</string>
+    <string name="other">其他</string>
+    <string name="channel_complaint">通道投诉</string>
+    <string name="reporting_instructions">举报说明</string>
+    <string name="reporting_instructions_fill_in">请填写举报说明（50个字）</string>
+    <string name="upload_screenshot">上传截图（选填）</string>
+    <string name="colleagues_pull_black">同时拉黑TA</string>
+    <string name="customer_service_processing">如没有符合的内容，请直接反馈【在线客服】处理</string>
+
+    <string name="enter_user_id">请输入被举报用户ID</string>
+    <string name="enter_contact_number">请输入本人联系电话</string>
+    <string name="enter_reason_for_reporting">请填写举报说明</string>
+    <string name="complaint_success">问题反馈成功</string>
+    <string name="search">搜索</string>
+    <string name="search_woman">输入女神ID号</string>
+    <string name="search_man">输入男神ID号</string>
+    <string name="evaluate">评价</string>
+    <string name="not_look_for_woman">没有您要查找的女神</string>
+    <string name="not_look_for_man">没有您要查找的男神</string>
+    <string name="input_error">输入有误</string>
+    <string name="evaluate_title">对%s的评价</string>
+
+    <string name="labour_union_hall">工会大厅</string>
+    <string name="Off_order_square">视频派对</string>
+    <string name="video_speed_matching">视频速配</string>
+    <string name="video_appointment">语音通话</string>
+
+    <string name="we_chai">微信</string>
+    <string name="empty_gift_box">空空如也的礼物盒</string>
+    <string name="liberals">自由者</string>
+    <string name="buddhists">佛系者</string>
+    <string name="beauty_effects">美颜特效</string>
+    <string name="chat">聊天</string>
+    <string name="feedback_and_complaints">反馈与投诉</string>
+    <string name="my_share">我的分享</string>
+
+    <string name="recent_calls">最近通话</string>
+    <string name="frequent_calls">经常通话</string>
+    <string name="problem_description">问题描述（必填）</string>
+    <string name="describe_the_problem_indetail">详细描述问题</string>
+    <string name="suggestions">建议意见</string>
+    <string name="enter_suggestions">请输入您的建议</string>
+    <string name="withdrawal">提现</string>
+    <string name="exchange">兑换</string>
+    <string name="revenue_center">收益中心</string>
+    <string name="revenue_list">收益明细</string>
+    <string name="revenue_type">收益类型</string>
+
+    <string name="aristocratic_privilege">贵族勋章</string>
+    <string name="noble_rights_and_interests">尊贵权益</string>
+    <string name="head_frame">头像边框</string>
+    <string name="noble_gifts">贵族礼物</string>
+    <string name="noble_nameplate">贵族铭牌</string>
+    <string name="recharge_discount">充值优惠</string>
+    <string name="noble_bullet_screen">贵族折扣</string>
+    <string name="create_group_chat">上线通知</string>
+    <string name="front_row_wheat_preface">前排麦序</string>
+    <string name="gift_broadcast">送礼广播</string>
+    <string name="stealth_privilege">私信畅聊</string>
+    <string name="call_discount">通话折扣</string>
+    <string name="expression_free">表情免费</string>
+    <string name="vip_seats">贵宾席位</string>
+
+    <string name="privacy_policys">《隐私政策》</string>
+    <string name="user_agreements">《用户协议》</string>
+    <string name="disagree">不同意</string>
+    <string name="disagree_and_logout">不同意并退出</string>
+    <string name="agree">同意</string>
+
+
+    <string name="do_not_upgrade_temporarily">暂不升级</string>
+    <string name="introducttory_one">一段美好的故事就从现在开始</string>
+    <string name="introducttory_two">你与女神之间可以尽情的畅聊</string>
+    <string name="introducttory_three">拉近你与女神之间的一步之遥</string>
+    <string name="enter_application">进入应用</string>
+
+    <string name="his_dynamic">他的动态</string>
+    <string name="svip">SVIP</string>
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

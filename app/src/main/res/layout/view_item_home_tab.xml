@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_item_card"
+        android:padding="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+ 		app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tab_item_cl_content"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        >
+        <ImageView
+            android:id="@+id/tab_item_iv_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/em_empty_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/tab_iv_avatar"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@mipmap/icon_sex_select_man"
+            android:layout_marginBottom="@dimen/content_margin"
+            android:layout_marginStart="@dimen/content_margin"
+            />
+
+        <com.iskyun.im.widget.RatingStarView
+            android:id="@+id/tab_rsv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            app:rsv_cornerRadius="25dp"
+            app:rsv_starThickness="0.6"
+            app:rsv_starMargin="2dp"
+            app:rsv_drawStrokeForFullStar="true"
+            app:rsv_starBackgroundColor="@color/golden"
+            app:strokeColor="@color/golden"
+            app:rsv_strokeColor="@color/golden"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+            android:layout_marginBottom="@dimen/content_margin"
+            android:layout_marginStart="@dimen/content_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tab_tv_name"
+            style="@style/AppTextWhite"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tab_rsv_star"
+            android:layout_marginStart="@dimen/content_margin"
+           />
+
+        <TextView
+            android:id="@+id/tab_tv_level"
+            style="@style/AppTextWhite"
+            android:layout_width="32dp"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            android:background="@drawable/btn_common_bg"
+            android:text="Lv1"
+            android:textSize="@dimen/small_size"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/content_margin"
+            android:layout_marginStart="@dimen/content_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/tab_iv_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_margin"
+            android:layout_marginStart="@dimen/content_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_user_detail_video_whites" />
+
+        <TextView
+            android:id="@+id/tab_tv_price"
+            style="@style/AppTextWhite"
+            android:layout_marginStart="3dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_iv_video"
+            app:layout_constraintStart_toEndOf="@+id/tab_iv_video"
+            app:layout_constraintTop_toTopOf="@+id/tab_iv_video" />
+
+        <ImageView
+            android:id="@+id/tab_iv_online_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/icon_anchor_status_off"
+            android:layout_marginEnd="@dimen/content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tab_iv_video" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+

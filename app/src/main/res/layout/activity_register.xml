@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="user"
+            type="com.iskyun.im.data.bean.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gift_gray"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
+
+        <ImageView
+            android:id="@+id/register_iv_avatar"
+            android:layout_width="@dimen/avatar_height"
+            android:layout_height="@dimen/avatar_height"
+            android:layout_marginTop="@dimen/register_margin"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_sex_portrait" />
+
+        <TextView
+            android:id="@+id/register_tv_avatar"
+            style="@style/AppText"
+            android:layout_marginTop="@dimen/content_margin"
+            android:text="@string/register_avatar_tip"
+            android:textColor="@color/colorContent"
+            android:textSize="@dimen/sub_title_size"
+            app:layout_constraintEnd_toEndOf="@+id/register_iv_avatar"
+            app:layout_constraintStart_toStartOf="@+id/register_iv_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/register_iv_avatar" />
+
+        <RelativeLayout
+            android:id="@+id/register_rl_nick"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/register_white_bg"
+            android:paddingStart="@dimen/register_margin"
+            android:paddingEnd="@dimen/register_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_tv_avatar">
+
+            <TextView
+                android:id="@+id/register_tv_nick_tip"
+                style="@style/AppText"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/nick"
+                android:textColor="@color/colorContent"
+                android:textSize="@dimen/sub_title_size" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/register_et_nick"
+                style="@style/AppEdit"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/register_tv_nick_tip"
+                android:layout_toStartOf="@+id/register_iv_nick"
+                android:text="@={user.nickname}"
+                android:selection="@{!TextUtils.isEmpty(user.nickname)? user.nickname.length() : 0}"
+                android:inputType="text"
+                android:maxLength="10"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/sub_title_size"  />
+
+
+            <ImageView
+                android:id="@+id/register_iv_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/icon_sex_random_nick"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/register_rl_age"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@drawable/register_white_bg"
+            android:paddingStart="@dimen/register_margin"
+            android:paddingEnd="@dimen/register_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_rl_nick">
+
+            <TextView
+                android:id="@+id/register_tv_age_tip"
+                style="@style/AppText"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/age"
+                android:textColor="@color/colorContent"
+                android:textSize="@dimen/sub_title_size" />
+
+            <TextView
+                android:id="@+id/register_tv_age"
+                style="@style/AppText"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/register_tv_age_tip"
+                android:text="@{String.valueOf(user.age)}"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/sub_title_size" />
+
+            <ImageView
+                android:id="@+id/register_iv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/icon_arrow_right" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/register_tv_select"
+            style="@style/AppText"
+            android:layout_marginTop="40dp"
+            android:text="@string/select_sex"
+            android:textColor="@color/colorContent"
+            android:textSize="@dimen/sub_title_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_rl_age" />
+
+        <RadioGroup
+            android:id="@+id/register_rg_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_tv_select">
+
+            <com.iskyun.im.widget.CenterRadioButton
+                android:id="@+id/register_rb_man"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/register_sex_bg"
+                android:button="@null"
+                android:checked="@{user.sex == 1 ? true : false }"
+                android:drawableStart="@mipmap/icon_sex_select_man"
+                android:drawablePadding="@dimen/content_margin"
+                android:gravity="center_vertical"
+                android:text="@string/register_man"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/sub_title_size"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.3" />
+
+            <com.iskyun.im.widget.CenterRadioButton
+                android:id="@+id/register_rb_woman"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/register_sex_bg"
+                android:button="@null"
+                android:checked="@{user.sex == 1? false : true }"
+                android:drawableStart="@mipmap/icon_sex_select_woman"
+                android:drawablePadding="@dimen/content_margin"
+                android:gravity="center_vertical"
+                android:text="@string/register_woman"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/sub_title_size"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/register_tv_register_tip"
+            style="@style/AppText"
+            android:layout_marginTop="@dimen/register_margin"
+            android:text="@string/register_tip"
+            android:textColor="@color/colorContent"
+            android:textSize="@dimen/sub_title_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_rg_sex" />
+
+        <Button
+            android:id="@+id/register_btn_confirm"
+            style="@style/AppBtn"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="@dimen/button_margin_with_padding"
+            android:layout_marginEnd="@dimen/button_margin_with_padding"
+            android:text="@string/confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_tv_register_tip" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

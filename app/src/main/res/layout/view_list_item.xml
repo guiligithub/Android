@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/view_list_item_iv_left_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:paddingRight="@dimen/text_margin"
+        app:srcCompat="@mipmap/icon_arrow_right"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_list_item_tv_title"
+        app:layout_constraintBottom_toBottomOf="@+id/view_list_item_tv_title" />
+
+    <TextView
+        android:id="@+id/view_list_item_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/view_list_item_iv_left_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/view_list_item_tv_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toEndOf="@+id/view_list_item_tv_title"
+        app:layout_constraintTop_toTopOf="@+id/view_list_item_tv_title"
+        app:layout_constraintBottom_toBottomOf="@+id/view_list_item_tv_title"/>
+
+    <ImageView
+        android:id="@+id/view_list_item_iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@mipmap/icon_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_list_item_tv_title"
+        app:layout_constraintBottom_toBottomOf="@+id/view_list_item_tv_title" />
+
+    <TextView
+        android:id="@+id/view_list_item_tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginEnd="@dimen/content_margin"
+        app:layout_constraintEnd_toStartOf="@+id/view_list_item_iv_icon"
+        app:layout_constraintTop_toTopOf="@+id/view_list_item_tv_title"
+        app:layout_constraintBottom_toBottomOf="@+id/view_list_item_tv_title"  />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/view_list_item_edit_content"
+        style="@style/AppEdit"
+        android:textColor="@color/colorText"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/view_list_item_iv_icon"
+        app:layout_constraintTop_toTopOf="@+id/view_list_item_tv_title"
+        app:layout_constraintBottom_toBottomOf="@+id/view_list_item_tv_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="@drawable/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

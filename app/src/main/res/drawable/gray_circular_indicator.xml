@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/dialog_color_normal">
+    <item android:height="12dp" android:width="12dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/common_btn_radius" />
+            <gradient
+                android:angle="0"
+                android:centerColor="@color/dialog_color_normal"
+                android:centerX="0.7"
+                android:endColor="@color/dialog_color_normal"
+                android:startColor="@color/dialog_color_normal"
+                android:type="linear" />
+        </shape>
+    </item>
+</ripple>

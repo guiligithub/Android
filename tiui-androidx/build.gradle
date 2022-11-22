@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 32
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 32
+
+        buildConfigField "String", "TIUI_VERSION", "\"1.5\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+
+    api 'androidx.appcompat:appcompat:1.4.2'
+    api 'androidx.recyclerview:recyclerview:1.2.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
+    api 'com.google.code.gson:gson:2.8.6'
+    api 'com.github.bumptech.glide:glide:4.13.2'
+    api 'com.hwangjr.rxbus:rxbus:1.0.6'
+    api 'com.liulishuo.okdownload:okdownload:1.0.5'
+    api 'com.shizhefei:ViewPagerIndicator:1.1.9.androidx'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //api files('libs/ti-sdk.aar')
+}

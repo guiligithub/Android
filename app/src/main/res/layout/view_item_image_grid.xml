@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+        <ImageView
+            android:id="@+id/view_item_image_grid_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view_item_image_grid_tv_tag"
+            android:layout_width="32dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:background="@drawable/image_grid_tv_shape"
+            android:gravity="center"
+            android:text="私密"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toLeftOf="@id/view_item_image_grid_iv"
+            app:layout_constraintTop_toTopOf="@id/view_item_image_grid_iv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

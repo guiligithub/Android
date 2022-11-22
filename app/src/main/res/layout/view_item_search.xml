@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:background="@color/white"
+        >
+
+        <com.hyphenate.easeui.widget.EaseImageView
+            android:id="@+id/tab_iv_Avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="4dp"
+            app:ease_shape_type="round"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_head_portrait_checking"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tab_tv_name"
+            style="@style/AppTextWhite"
+            android:text="青青"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@+id/tab_iv_Avatar"
+            app:layout_constraintTop_toTopOf="@+id/tab_iv_Avatar" />
+
+
+        <com.iskyun.im.widget.SkyTextView
+            android:id="@+id/tab_tv_age"
+            style="@style/AppTextSexAndAge"
+
+            android:text="24"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_tv_name"
+            app:layout_constraintStart_toEndOf="@+id/tab_tv_name"
+            app:layout_constraintTop_toTopOf="@+id/tab_tv_name"  />
+
+
+        <TextView
+            android:id="@+id/tab_tv_grade_number"
+            android:layout_width="6dp"
+            android:layout_height="13dp"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/tab_tv_age"
+            app:layout_constraintEnd_toEndOf="@id/tab_tv_age"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tab_tv_age"
+            app:layout_constraintTop_toTopOf="@id/tab_tv_age"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tab_tv_content"
+            style="@style/AppTextWhite"
+            android:text="阴天雨天晴天，都不如你和我liao'tian"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tab_tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tab_tv_name"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

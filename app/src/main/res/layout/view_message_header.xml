@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:translationZ="1dp"
+    android:background="@drawable/bottom_radius_white_bg"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:id="@+id/msg_header_iv_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@mipmap/icon_customer_online" />
+
+    <TextView
+        android:id="@+id/msg_header_tv_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/online"
+        android:layout_marginTop="@dimen/text_margin"
+        app:layout_constraintEnd_toEndOf="@+id/msg_header_iv_service"
+        app:layout_constraintStart_toStartOf="@+id/msg_header_iv_service"
+        app:layout_constraintTop_toBottomOf="@+id/msg_header_iv_service" />
+
+    <ImageView
+        android:id="@+id/msg_header_iv_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/msg_header_iv_service"
+        app:layout_constraintEnd_toStartOf="@+id/msg_header_iv_service"
+        android:layout_marginEnd="42dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@mipmap/icon_call_record" />
+
+    <TextView
+        android:id="@+id/msg_header_tv_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call_record"
+        android:layout_marginTop="@dimen/text_margin"
+        app:layout_constraintTop_toBottomOf="@+id/msg_header_iv_call"
+        app:layout_constraintEnd_toEndOf="@+id/msg_header_iv_call"
+        app:layout_constraintStart_toStartOf="@+id/msg_header_iv_call"/>
+
+    <ImageView
+        android:id="@+id/msg_header_iv_sys_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/msg_header_iv_service"
+        app:layout_constraintStart_toEndOf="@+id/msg_header_iv_service"
+        android:layout_marginStart="42dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@mipmap/icon_system_message" />
+
+    <TextView
+        android:id="@+id/msg_header_tv_sys_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/system_message"
+        android:layout_marginTop="@dimen/text_margin"
+        app:layout_constraintTop_toBottomOf="@+id/msg_header_iv_sys_msg"
+        app:layout_constraintEnd_toEndOf="@+id/msg_header_iv_sys_msg"
+        app:layout_constraintStart_toStartOf="@+id/msg_header_iv_sys_msg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/msg_header_root"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin">
+
+        <ImageView
+            android:id="@+id/msg_header_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_customer_online" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/msg_header_iv"
+            app:layout_constraintEnd_toStartOf="@+id/msg_header_arrow"
+            app:layout_constraintStart_toEndOf="@+id/msg_header_iv"
+            app:layout_constraintTop_toTopOf="@+id/msg_header_iv">
+
+            <TextView
+                android:id="@+id/msg_header_title"
+                style="@style/AppText"
+                android:text="@string/online"
+                android:textSize="@dimen/sub_title_size" />
+
+            <com.iskyun.im.widget.MarqueeTextView
+                android:id="@+id/msg_header_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_width="match_parent"
+                app:mtvText=""
+                app:mtvTextSize="@dimen/small_size"
+                app:mtvTextColor="@color/colorContent"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/msg_header_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_arrow_right" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@drawable/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

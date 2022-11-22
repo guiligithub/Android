@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorRipple">
+    <item android:height="@dimen/common_tv_height">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/common_btn_radius" />
+            <gradient
+                android:angle="0"
+                android:centerColor="@color/bg_center_color"
+                android:centerX="0.7"
+                android:endColor="@color/bg_end_color"
+                android:startColor="@color/bg_start_color"
+                android:type="linear" />
+        </shape>
+    </item>
+</ripple>

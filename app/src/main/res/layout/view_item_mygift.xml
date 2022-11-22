@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_item_gift_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/view_item_git_iv_icon"
+                    android:layout_width="@dimen/adaptive_79dp"
+                    android:layout_height="@dimen/adaptive_94dp"
+                    android:layout_marginTop="@dimen/content_margin"
+                    android:padding="@dimen/adaptive_5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.1"
+                    android:adjustViewBounds="true"
+                    />
+
+                <ImageView
+                    android:id="@+id/view_item_git_iv_hot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_gravity="start"
+                    android:visibility="gone"
+                    app:srcCompat="@mipmap/icon_hot" />
+
+
+                <TextView
+                    android:id="@+id/view_item_git_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sub_title_size"
+                    android:text="TextView"
+                    android:textColor="@color/purple1"
+                    app:layout_constraintEnd_toEndOf="@+id/view_item_git_iv_icon"
+                    app:layout_constraintStart_toStartOf="@+id/view_item_git_iv_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/view_item_git_iv_icon" />
+
+                <TextView
+                    android:id="@+id/view_item_git_tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="1314"
+                    android:drawablePadding="3dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/view_item_git_iv_icon"
+                    app:layout_constraintStart_toStartOf="@+id/view_item_git_iv_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/view_item_git_tv_name"
+                    app:drawableEndCompat="@mipmap/icon_item_diamonds" />
+
+
+                <TextView
+                    android:id="@+id/view_item_git_tv_num"
+                    style="@style/AppTextWhite"
+                    android:drawablePadding="3dp"
+                    android:textSize="@dimen/small_size"
+                    android:text="数量：1"
+                    android:textColor="@color/purple1"
+                    app:layout_constraintEnd_toEndOf="@+id/view_item_git_iv_icon"
+                    app:layout_constraintStart_toStartOf="@+id/view_item_git_iv_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/view_item_git_tv_price" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/chat_header_divider_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="@drawable/divider"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/chat_header_tv_diamond"
+        style="@style/ChatHeaderText"
+        android:textSize="@dimen/small_size"
+        android:text="@string/diamond"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_divider_top"
+        app:layout_constraintEnd_toStartOf="@+id/chat_header_divider_1"/>
+    
+    <View
+        android:id="@+id/chat_header_divider_1"
+        android:layout_width="@dimen/divider"
+        android:layout_height="@dimen/content_margin"
+        android:background="@color/colorDivider"
+        app:layout_constraintEnd_toStartOf="@+id/chat_header_tv_intimacy"
+        app:layout_constraintStart_toEndOf="@+id/chat_header_tv_diamond"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_tv_diamond"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_header_tv_diamond"/>
+
+    <TextView
+        android:id="@+id/chat_header_tv_intimacy"
+        style="@style/ChatHeaderText"
+        android:text="@string/intimacy"
+        app:layout_constraintEnd_toStartOf="@+id/chat_header_tv_wx"
+        app:layout_constraintStart_toEndOf="@+id/chat_header_divider_1"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_tv_diamond" />
+
+    <View
+        android:id="@+id/chat_header_divider_2"
+        android:layout_width="@dimen/divider"
+        android:layout_height="@dimen/content_margin"
+        android:background="@color/colorDivider"
+        app:layout_constraintEnd_toStartOf="@+id/chat_header_tv_wx"
+        app:layout_constraintStart_toEndOf="@+id/chat_header_tv_intimacy"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_tv_diamond"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_header_tv_diamond"/>
+
+    <TextView
+        android:id="@+id/chat_header_tv_wx"
+        style="@style/ChatHeaderText"
+        android:text="@string/look_wx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_tv_diamond"
+        app:layout_constraintStart_toEndOf="@+id/chat_header_tv_intimacy" />
+
+    <View
+        android:id="@+id/chat_header_divider_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:background="@drawable/divider"
+        app:layout_constraintTop_toBottomOf="@+id/chat_header_tv_diamond"/>
+
+    <ImageView
+        android:id="@+id/chat_header_iv_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_announcement"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/content_margin"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_tv_report"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_header_tv_report"
+        app:layout_constraintEnd_toStartOf="@+id/chat_header_tv_notice"/>
+
+    <com.iskyun.im.widget.MarqueeTextView
+        android:id="@+id/chat_header_tv_notice"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        app:mtvTextColor="@color/colorContent"
+        app:mtvTextSize="@dimen/small_size"
+        android:layout_marginEnd="@dimen/text_margin"
+        app:layout_constraintTop_toTopOf="@+id/chat_header_tv_report"
+        app:layout_constraintStart_toEndOf="@+id/chat_header_iv_notice"
+        app:layout_constraintEnd_toStartOf="@+id/chat_header_tv_report"/>
+
+
+    <TextView
+        android:id="@+id/chat_header_tv_report"
+        style="@style/ChatHeaderText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/report"
+        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
+        android:background="@drawable/chat_report_bg"
+        android:layout_marginEnd="@dimen/content_margin"
+        app:layout_constraintTop_toBottomOf="@+id/chat_header_divider_bottom"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat_header_tv_report"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

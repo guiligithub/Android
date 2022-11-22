@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="370dp"
+    android:background="@mipmap/icon_update_version">
+
+    <ImageView
+        android:id="@+id/version_iv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/version_tv_title"
+        style="@style/AppTextWhite"
+        android:layout_marginStart="@dimen/adaptive_23dp"
+        android:layout_marginTop="@dimen/adaptive_85dp"
+        android:text="@string/update_version_tips"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/version_iv_header" />
+
+    <TextView
+        android:id="@+id/version_tv_version_name"
+        style="@style/AppText"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text=""
+        android:textSize="@dimen/sub_title_size"
+        app:layout_constraintVertical_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/version_tv_content"
+        style="@style/AppText"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/content_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text=""
+        android:textSize="@dimen/sub_title_size"
+        app:layout_constraintStart_toStartOf="@+id/version_tv_version_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/version_tv_version_name" />
+
+    <TextView
+        android:id="@+id/version_tv_file_size"
+        style="@style/AppText"
+        android:layout_marginTop="@dimen/common_tv_height"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text=""
+        android:textSize="@dimen/sub_title_size"
+        app:layout_constraintStart_toStartOf="@+id/version_tv_version_name"
+        app:layout_constraintTop_toBottomOf="@+id/version_tv_content" />
+
+    <ProgressBar
+        android:id="@+id/version_pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/version_tv_progress"
+        app:layout_constraintStart_toStartOf="@+id/version_tv_version_name"
+        app:layout_constraintTop_toBottomOf="@+id/version_tv_file_size" />
+
+    <TextView
+        android:id="@+id/version_tv_progress"
+        style="@style/AppText"
+        android:text=""
+        android:textSize="@dimen/sub_title_size"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/version_tv_content"
+        app:layout_constraintTop_toTopOf="@+id/version_tv_file_size" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/version_group_pb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="version_pb,version_tv_progress,version_tv_file_size" />
+
+    <Button
+        android:id="@+id/version_btn_update"
+        style="@style/AppBtn"
+        android:background="@drawable/btn_color_accent_bg"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/content_size"
+        android:layout_marginTop="@dimen/dialog_title_margin_bottom"
+        android:layout_marginEnd="@dimen/content_size"
+        android:text="@string/update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/version_tv_content"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/version_btn_cancel"
+        style="@style/AppBtn"
+        android:layout_height="@dimen/common_tv_height"
+        android:layout_marginTop="@dimen/content_margin"
+        android:layout_marginBottom="@dimen/content_margin"
+        android:background="@null"
+        android:text="@string/do_not_upgrade_temporarily"
+        android:textColor="@color/colorContent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/version_btn_update" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

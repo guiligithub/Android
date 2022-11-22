@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tab_item_cl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/content_margin"
+        android:paddingBottom="@dimen/content_margin">
+
+        <com.hyphenate.easeui.widget.EaseImageView
+            android:id="@+id/tab_iv_Avatar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            app:ease_shape_type="round"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_head_portrait_checking"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tab_tv_name"
+            style="@style/AppTextBlack"
+            android:text="@string/app_name"
+            android:layout_marginStart="@dimen/content_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_iv_Avatar"
+            app:layout_constraintStart_toEndOf="@+id/tab_iv_Avatar"
+            app:layout_constraintTop_toTopOf="@+id/tab_iv_Avatar" />
+
+        <com.iskyun.im.widget.SkyTextView
+            android:id="@+id/anchor_detail_tv_age"
+            style="@style/AppTextWhite"
+            android:background="@mipmap/sex_bg_woman"
+            android:drawableStart="@mipmap/icon_sex_man"
+            android:drawablePadding="2dp"
+            android:gravity="center"
+            android:text="25"
+            android:textSize="@dimen/small_size"
+            android:layout_marginLeft="@dimen/adaptive_5dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_tv_name"
+            app:layout_constraintStart_toEndOf="@+id/tab_tv_name"
+            app:layout_constraintTop_toTopOf="@+id/tab_tv_name"
+            />
+
+        <ImageView
+            android:id="@+id/tab_iv_grade"
+            style="@style/AppTextWhite"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:src="@mipmap/follow_status_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/anchor_detail_tv_age"
+            app:layout_constraintStart_toEndOf="@+id/anchor_detail_tv_age"
+            app:layout_constraintTop_toTopOf="@+id/anchor_detail_tv_age" />
+
+
+        <TextView
+            android:id="@+id/tab_tv_grade_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LV1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_size"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tab_iv_grade"
+            app:layout_constraintEnd_toEndOf="@id/tab_iv_grade"
+            app:layout_constraintStart_toStartOf="@id/tab_iv_grade"
+            app:layout_constraintTop_toTopOf="@id/tab_iv_grade"/>
+
+        <ImageView
+            android:id="@+id/tab_iv_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/icon_follow_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_iv_more"
+            app:layout_constraintRight_toLeftOf="@+id/tab_iv_more"
+            app:layout_constraintTop_toTopOf="@+id/tab_iv_more" />
+
+        <ImageView
+            android:id="@+id/tab_iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/icon_more"
+            android:layout_marginEnd="@dimen/content_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tab_tv_name"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_tv_name"
+            />
+
+        <TextView
+            android:id="@+id/tab_tv_content"
+            style="@style/AppText"
+            android:layout_width="0dp"
+            android:text=""
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@+id/tab_tv_name"
+            app:layout_constraintEnd_toEndOf="@+id/imagerecycler"
+            app:layout_constraintTop_toBottomOf="@+id/tab_tv_name"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imagerecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/tab_tv_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_tv_content" />
+
+        <TextView
+            android:id="@+id/tab_tv_time"
+            style="@style/AppTextWhite"
+            android:text="12分钟前"
+            android:textColor="@color/colorContent"
+            android:textSize="@dimen/small_size"
+            android:layout_marginTop="@dimen/view_margin"
+            app:layout_constraintTop_toBottomOf="@+id/imagerecycler"
+            app:layout_constraintLeft_toLeftOf="@+id/tab_tv_content" />
+
+
+        <TextView
+            android:id="@+id/tab_iv_Accost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:text="搭讪"
+            android:textSize="@dimen/small_size"
+            android:drawablePadding="@dimen/text_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_tv_like"
+            app:layout_constraintRight_toLeftOf="@+id/tab_tv_like"
+            app:layout_constraintTop_toTopOf="@+id/tab_tv_like"
+            app:layout_constraintVertical_bias="1.0"
+            app:drawableLeftCompat="@mipmap/icon_bubble" />
+
+        <TextView
+            android:id="@+id/tab_tv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="@dimen/view_margin"
+            android:text="0"
+            android:drawablePadding="@dimen/text_margin"
+            android:textSize="@dimen/small_size"
+            app:drawableStartCompat="@mipmap/icon_cardioid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tab_tv_time"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_tv_time"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

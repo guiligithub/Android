@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="loginBody"
+            type="com.iskyun.im.data.req.LoginBody" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_view_height"
+            android:gravity="bottom"
+            android:paddingStart="@dimen/view_margin"
+            android:paddingEnd="@dimen/view_margin"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/pwd_login_et_phone"
+                style="@style/AppEdit"
+                android:hint="@string/input_phone_number"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text="@={loginBody.loginInfo}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:background="@drawable/divider"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_view_height"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/view_margin"
+            android:paddingEnd="@dimen/view_margin">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/pwd_login_et_pwd"
+                style="@style/AppEdit"
+                android:layout_centerVertical="true"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:maxLength="6"
+                android:text="@={loginBody.loginSecret}" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:background="@drawable/divider"/>
+
+        <Button
+            android:id="@+id/pwd_login_btn_sign"
+            style="@style/AppBtn"
+            android:layout_marginTop="@dimen/login_view_height"
+            android:enabled="@{(TextUtils.isEmpty(loginBody.loginSecret) || TextUtils.isEmpty(loginBody.loginInfo)) ? false : true }"
+            android:onClick="onClick"
+            android:text="@string/login"
+            tools:ignore="UsingOnClickInXml" />
+
+
+    </LinearLayout>
+</layout>

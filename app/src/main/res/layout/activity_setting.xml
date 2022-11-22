@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_bg"
+        tools:context=".ui.setting.SettingActivity">
+
+        <View
+            android:id="@+id/setting_view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/content_margin"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/setting_about_us"
+            style="@style/ListItemViewWithBg"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_view_divider"
+            app:list_item_title="@string/about_us" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/setting_blacklist"
+            style="@style/ListItemViewWithBg"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_about_us"
+            app:list_item_title="@string/blacklist" />
+
+        <com.iskyun.im.widget.ListItemView
+            android:id="@+id/setting_cur_version"
+            style="@style/ListItemViewWithBg"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_blacklist"
+            app:list_item_title="@string/current_version" />
+
+        <View
+            android:id="@+id/setting_view_divider_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/content_margin"
+            android:background="@color/gray_bg"
+            app:layout_constraintTop_toBottomOf="@+id/setting_cur_version"/>
+
+        <TextView
+            android:id="@+id/setting_logout"
+            style="@style/AppText"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_btn_height"
+            android:textColor="@color/colorAccent"
+            android:text="@string/logout"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_view_divider_2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

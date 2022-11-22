@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle|end"
+            android:layout_marginStart="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/content_margin">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/content_margin"
+                android:paddingBottom="@dimen/content_margin">
+
+                <ImageView
+                    android:id="@+id/msg_header_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/icon_customer_online" />
+
+                <TextView
+                    android:id="@+id/msg_header_title"
+                    style="@style/AppText"
+                    android:layout_marginStart="@dimen/content_margin"
+                    android:text="@string/online"
+                    android:textSize="@dimen/sub_title_size"
+                    app:layout_constraintStart_toEndOf="@+id/msg_header_iv"
+                    app:layout_constraintTop_toTopOf="@+id/msg_header_iv" />
+
+                <TextView
+                    android:id="@+id/msg_header_content"
+                    style="@style/AppText"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/content_margin"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/online_explain"
+                    android:textSize="@dimen/small_size"
+                    app:layout_constraintEnd_toStartOf="@+id/msg_header_arrow"
+                    app:layout_constraintStart_toStartOf="@+id/msg_header_title"
+                    app:layout_constraintTop_toBottomOf="@+id/msg_header_title" />
+
+                <ImageView
+                    android:id="@+id/msg_header_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/icon_arrow_right" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/content_margin"
+                android:paddingBottom="@dimen/content_margin">
+
+                <ImageView
+                    android:id="@+id/msg_header_iv_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/icon_call_record" />
+
+
+                <TextView
+                    android:id="@+id/msg_header_tv_service"
+                    style="@style/AppText"
+                    android:layout_marginStart="@dimen/content_margin"
+                    android:text="@string/call_record"
+                    android:textSize="@dimen/sub_title_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/msg_header_iv_service"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/msg_header_call_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/icon_arrow_right" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <com.hyphenate.easeui.modules.conversation.EaseConversationListLayout
+            android:id="@+id/list_conversation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

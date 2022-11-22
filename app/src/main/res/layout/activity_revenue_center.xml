@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.iskyun.im.data.bean.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/icon_revenue_center_bg">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@id/tl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/tl_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:contentDescription="@string/setting"
+                    android:src="@mipmap/icon_back_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/revenue_center_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:text="@string/revenue_center"
+                    android:textSize="@dimen/title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/revenue_center_tv_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:text="@string/revenue_list"
+                    android:textSize="@dimen/text_size"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/revenue_center_v_identity_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/mine_shape_white_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="80dp"
+            app:layout_constraintTop_toTopOf="@+id/user_info_iv_avatar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mine_v_withdrawal_of_yuanbao_bg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/content_margin"
+                android:layout_marginEnd="@dimen/view_margin"
+                android:background="@mipmap/icon_rounded_rectangle_1"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_v_diamond_bg"
+                app:layout_constraintEnd_toStartOf="@+id/mine_v_diamond_bg"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/mine_tv_withdrawal_of_yuanbao_tips"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/adaptive_15dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:src="@mipmap/icon_yuanbao"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mine_tv_yuanbao_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{'￥'+String.valueOf(user.userBalance)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_size"
+                    app:layout_constraintBottom_toBottomOf="@id/mine_tv_withdrawal_of_yuanbao_tips"
+                    app:layout_constraintLeft_toRightOf="@id/mine_tv_withdrawal_of_yuanbao_tips"
+                    app:layout_constraintTop_toTopOf="@id/mine_tv_withdrawal_of_yuanbao_tips" />
+
+                <TextView
+                    android:id="@+id/mine_tv_recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/adaptive_8dp"
+                    android:layout_marginRight="@dimen/adaptive_15dp"
+                    android:background="@drawable/white_report_bg"
+                    android:gravity="center"
+                    android:text="@string/withdrawal"
+                    app:layout_constraintBottom_toBottomOf="@id/mine_tv_yuanbao_num"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mine_tv_yuanbao_num" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mine_v_diamond_bg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin"
+                android:layout_marginEnd="@dimen/content_margin"
+                android:layout_marginBottom="30dp"
+                android:background="@mipmap/icon_rounded_rectangle_1"
+                app:layout_constraintBottom_toTopOf="@+id/mine_v_recharge_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/mine_v_withdrawal_of_yuanbao_bg">
+
+
+                <ImageView
+                    android:id="@+id/mine_tv_diamond_tips"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/adaptive_15dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:src="@mipmap/icon_item_recharge_diamond"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/mine_tv_diamond_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/adaptive_8dp"
+                    android:text="@{String.valueOf(user.userDiamond)}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_size"
+                    app:layout_constraintBottom_toBottomOf="@id/mine_tv_diamond_tips"
+                    app:layout_constraintLeft_toRightOf="@id/mine_tv_diamond_tips"
+                    app:layout_constraintTop_toTopOf="@id/mine_tv_diamond_tips" />
+
+
+                <TextView
+                    android:id="@+id/mine_tv_diamond_recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/adaptive_8dp"
+                    android:layout_marginRight="@dimen/adaptive_15dp"
+                    android:background="@drawable/white_report_bg"
+                    android:gravity="center"
+                    android:text="@string/exchange"
+                    app:layout_constraintBottom_toBottomOf="@id/mine_tv_diamond_num"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mine_tv_diamond_num" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mine_v_recharge_bg"
+                android:layout_width="254dp"
+                android:layout_height="@dimen/adaptive_63dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="53dp"
+                android:visibility="invisible"
+                android:background="@mipmap/icon_rounded_rectangle"
+                android:elevation="3dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/mine_tv_balance_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/adaptive_8dp"
+                    android:drawableRight="@mipmap/icon_yuanbao"
+                    android:drawablePadding="@dimen/adaptive_5dp"
+                    android:gravity="center"
+                    android:text="累计获得元宝 0"
+                    android:textColor="@color/back_1"
+                    android:textSize="@dimen/text_size"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/revenue_center_doll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:srcCompat="@mipmap/icon_revenue_center_doll" />
+
+        <ImageView
+            android:id="@+id/user_info_iv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/revenue_center_doll"
+            app:srcCompat="@mipmap/icon_revenue_center_gold_bucket" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

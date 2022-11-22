@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--vip权益-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_item_recharge"
+        android:layout_width="110dp"
+        android:layout_height="142dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/white_vip_bg">
+
+        <ImageView
+            android:id="@+id/item_vip_right_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@mipmap/icon_vip_call"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/item_vip_right_tv_name"
+            style="@style/AppText"
+            android:text=""
+            android:textColor="#C1700E"
+            android:layout_marginTop="@dimen/content_margin"
+            app:layout_constraintStart_toStartOf="@+id/item_vip_right_image"
+            app:layout_constraintTop_toBottomOf="@+id/item_vip_right_image"/>
+
+        <TextView
+            android:id="@+id/item_vip_right_tv_content"
+            style="@style/AppText"
+            android:layout_width="0dp"
+            android:gravity="start"
+            android:singleLine="false"
+            android:text=""
+            android:textSize="@dimen/small_size"
+            android:layout_marginTop="3dp"
+            app:layout_constraintHorizontal_weight="4"
+            android:textColor="@color/colorSubContent"
+            app:layout_constraintEnd_toStartOf="@+id/item_vip_right_tv_empty"
+            app:layout_constraintStart_toStartOf="@+id/item_vip_right_tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/item_vip_right_tv_name"/>
+
+        <TextView
+            android:id="@+id/item_vip_right_tv_empty"
+            style="@style/AppText"
+            android:layout_width="0dp"
+            android:text=""
+            android:textSize="@dimen/small_size"
+            android:layout_marginTop="3dp"
+            app:layout_constraintHorizontal_weight="1"
+            android:textColor="@color/colorSubContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_vip_right_tv_content"
+            app:layout_constraintTop_toBottomOf="@+id/item_vip_right_tv_name"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

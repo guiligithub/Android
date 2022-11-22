@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#000000">
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/opposite_surface_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/local_surface_layout"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="110dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--封面-->
+    <ImageView
+        android:id="@+id/iv_bg_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop" />
+
+    <com.hyphenate.easeui.player.EasyVideoPlayer
+        android:id="@+id/evp_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!--封面背景-->
+    <View
+        android:id="@+id/iv_bg_cover_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0a000000" />
+
+    <View
+        android:id="@+id/opposite_info_bg"
+        android:layout_width="200dp"
+        android:layout_height="@dimen/call_top_view_height"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/call_top_margin"
+        android:background="@drawable/call_chat_head_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.hyphenate.easecallkit.widget.EaseImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/call_top_view_height"
+        android:layout_height="@dimen/call_top_view_height"
+        android:src="@drawable/ease_default_avatar"
+        app:ease_shape_type="round"
+        app:layout_constraintBottom_toBottomOf="@id/opposite_info_bg"
+        app:layout_constraintLeft_toLeftOf="@id/opposite_info_bg"
+        app:layout_constraintTop_toTopOf="@id/opposite_info_bg" />
+
+    <TextView
+        android:id="@+id/tv_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_horizontal_margin"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text="张三"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_horizontal_margin"
+        android:includeFontPadding="false"
+        android:text="opposite_id"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintLeft_toRightOf="@id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@id/tv_nick" />
+
+    <ImageView
+        android:id="@+id/opposite_iv_attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/view_horizontal_margin"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/icon_follow_bg"
+        app:layout_constraintBottom_toBottomOf="@id/opposite_info_bg"
+        app:layout_constraintRight_toRightOf="@id/opposite_info_bg"
+        app:layout_constraintTop_toTopOf="@id/opposite_info_bg" />
+
+    <TextView
+        android:id="@+id/tv_call_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/em_margin_10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/em_size_normal"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@id/opposite_info_bg"
+        tools:text="@string/waiting_for_accept" />
+
+    <!--coming-->
+    <TextView
+        android:id="@+id/tv_coming_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/call_top_margin"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text="张三"
+        android:visibility="visible"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_call_state" />
+
+    <TextView
+        android:id="@+id/tv_coming_pre_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:includeFontPadding="false"
+        android:layout_marginTop="5dp"
+        android:text="正在邀请你视频通话..."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_coming_nick"
+        app:layout_constraintTop_toBottomOf="@+id/tv_coming_nick" />
+
+    <com.hyphenate.easecallkit.widget.EaseImageView
+        android:id="@+id/iv_avatar_voice"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/ease_default_avatar"
+        app:ease_shape_type="round"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nick_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/em_size_big_notify"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar_voice"
+        tools:ignore="HardcodedText"
+        tools:text="张三" />
+
+    <TextView
+        android:id="@+id/tv_call_state_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/em_margin_10"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:text="@string/waiting_for_accept"
+        android:textColor="@color/white"
+        android:textSize="@dimen/em_size_normal"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_nick_voice" />
+
+    <TextView
+        android:id="@+id/tv_balance_man"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:textColor="@color/white"
+        android:textSize="10.0sp"
+        android:text="123232"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/opposite_info_bg"
+        app:layout_constraintTop_toBottomOf="@+id/opposite_info_bg"/>
+
+    <!-- 演示视频录制功能 -->
+    <Button
+        android:id="@+id/btn_record_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/em_margin_10"
+        android:layout_marginRight="@dimen/em_margin_10"
+        android:text="@string/recording_video"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_call_monitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:textColor="#afff"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageButton
+        android:id="@+id/iv_mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/call_mute_normal"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_refuse_call"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_refuse_call" />
+
+    <ImageButton
+        android:id="@+id/btn_refuse_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:background="@null"
+        android:clickable="false"
+        android:src="@drawable/call_end"
+        android:text="@string/hang_up"
+        android:textColor="@color/white"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintBottom_toTopOf="@+id/btn_call_float"
+        app:layout_constraintLeft_toRightOf="@id/iv_mute"
+        app:layout_constraintRight_toLeftOf="@id/iv_handsfree" />
+
+    <ImageButton
+        android:id="@+id/iv_handsfree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/em_icon_speaker_normal"
+        android:text="@string/answer"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_refuse_call"
+        app:layout_constraintLeft_toRightOf="@id/btn_refuse_call"
+        app:layout_constraintRight_toLeftOf="@id/btn_answer_call" />
+
+    <ImageButton
+        android:id="@+id/btn_answer_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:clickable="false"
+        android:src="@drawable/call_answer"
+        android:text="@string/answer"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_refuse_call"
+        app:layout_constraintLeft_toRightOf="@id/iv_handsfree"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.hyphenate.easecallkit.widget.MyChronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="Chronometer"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/btn_refuse_call"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/black_round_bg"
+        android:drawableLeft="@drawable/d_chat_voice_call"
+        android:drawableTint="@color/white"
+        android:drawablePadding="8dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="6dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="6dp"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_switch_camera"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="@dimen/call_top_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@null"
+        android:src="@drawable/icon_switch_camera"
+        android:text="@string/switch_camera"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+    <TextView
+        android:id="@+id/tv_network_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:text="@string/network_error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:visibility="gone"
+        android:src="@drawable/icon_video_gift"
+        app:layout_constraintBottom_toBottomOf="@id/btn_call_float"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/iv_close_user_video"
+        app:layout_constraintTop_toTopOf="@id/btn_call_float" />
+
+    <ImageButton
+        android:id="@+id/iv_close_user_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:visibility="gone"
+        android:src="@drawable/icon_mute_normal"
+        app:layout_constraintBottom_toBottomOf="@id/btn_call_float"
+        app:layout_constraintLeft_toRightOf="@id/btn_gift"
+        app:layout_constraintRight_toLeftOf="@id/iv_faceunity"
+        app:layout_constraintTop_toTopOf="@id/btn_call_float" />
+
+    <ImageButton
+        android:id="@+id/iv_faceunity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:visibility="gone"
+        android:src="@drawable/icon_faceunity"
+        app:layout_constraintBottom_toBottomOf="@id/btn_call_float"
+        app:layout_constraintLeft_toRightOf="@id/iv_close_user_video"
+        app:layout_constraintRight_toLeftOf="@id/btn_call_float"
+        app:layout_constraintTop_toTopOf="@id/btn_call_float" />
+
+    <ImageButton
+        android:id="@+id/btn_call_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/icon_dialog_narrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/iv_faceunity"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_faceunity_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_popup_blue"
+        android:gravity="center"
+        android:text="美颜一下  让自己更帅！"
+        android:textColor="@color/white"
+        android:textSize="10.0sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/iv_faceunity"
+        app:layout_constraintRight_toRightOf="@id/iv_faceunity" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_use_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="iv_avatar,tv_nick,tv_call_state" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_ongoing_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="chronometer" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ll_voice_calling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_avatar_voice, tv_nick_voice,tv_call_state_voice" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ll_video_calling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv_id,iv_avatar,tv_nick,tv_call_state,opposite_iv_attention,
+        opposite_info_bg" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ll_video_called"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="btn_switch_camera" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ll_voice_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_mute,iv_handsfree" />
+
+    <!--tv_coming_nick, tv_coming_pre_tips,-->
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gp_video_coming_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_coming_nick, tv_coming_pre_tips," />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ll_coming_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="btn_answer_call" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_bottom_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_close_user_video"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

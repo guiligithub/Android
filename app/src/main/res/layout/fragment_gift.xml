@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gift_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gift_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/gift_tv_classics"
+            style="@style/AppText"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:textSize="@dimen/sub_title_size"
+            android:textColor="@color/gift_text_select_color"
+            android:gravity="center"
+            android:text="@string/classics_gift"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/gift_v_divider"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/content_margin"
+            android:background="@color/colorContent"
+            app:layout_constraintBottom_toBottomOf="@+id/gift_tv_classics"
+            app:layout_constraintStart_toEndOf="@+id/gift_tv_classics"
+            app:layout_constraintTop_toTopOf="@id/gift_tv_classics" />
+
+        <TextView
+            android:id="@+id/gift_tv_vip"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            style="@style/AppText"
+            android:textColor="@color/gift_text_select_color"
+            android:textSize="@dimen/sub_title_size"
+            android:gravity="center"
+            android:text="@string/vip_gift"
+            app:layout_constraintBottom_toBottomOf="@+id/gift_tv_classics"
+            app:layout_constraintStart_toEndOf="@+id/gift_v_divider"
+            app:layout_constraintTop_toTopOf="@id/gift_tv_classics" />
+
+        <TextView
+            android:id="@+id/gift_tv_total"
+            style="@style/AppTextWhite"
+            android:textSize="@dimen/sub_title_size"
+            android:text=""
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/gift_ll_gift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gift_color"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/view_margin"
+        android:layout_marginEnd="@dimen/view_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gift_view_top">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gift_rv_gift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gift_ll_gift">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gift_rv_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/content_margin"
+            android:layout_marginTop="@dimen/view_margin"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gift_tv_my_diamond"
+            style="@style/AppTextWhite"
+            android:textSize="@dimen/sub_title_size"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:text="@string/my_diamond"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/gift_tv_give"/>
+
+        <TextView
+            android:id="@+id/gift_tv_recharge"
+            style="@style/AppTextWhite"
+            android:textSize="@dimen/sub_title_size"
+            android:textColor="@color/gift_text_color"
+            android:layout_marginStart="@dimen/content_margin"
+            android:text="@string/recharge_of_give"
+            app:layout_constraintStart_toEndOf="@+id/gift_tv_my_diamond"
+            app:layout_constraintBottom_toBottomOf="@+id/gift_tv_give" />
+
+        <LinearLayout
+            android:id="@+id/gift_ll_count"
+            android:layout_height="28dp"
+            android:layout_width="80dp"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:background="@drawable/white_gray_bg"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/gift_tv_give"
+            app:layout_constraintEnd_toStartOf="@+id/gift_tv_give"
+            app:layout_constraintTop_toTopOf="@+id/gift_tv_give">
+            <TextView
+                android:id="@+id/gift_tv_count"
+                style="@style/AppText"
+                android:gravity="center"
+                android:textSize="@dimen/sub_title_size"
+                android:text="1214"
+                android:drawablePadding="@dimen/text_margin"
+                app:drawableEndCompat="@mipmap/icon_up_arrow" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/gift_tv_give"
+            style="@style/AppTextWhite"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            android:layout_height="32dp"
+            android:layout_width="70dp"
+            android:background="@drawable/btn_common_bg"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:layout_marginBottom="@dimen/content_margin"
+            android:layout_marginTop="@dimen/content_margin"
+            android:text="@string/give_away"
+            app:layout_constraintTop_toBottomOf="@+id/gift_rv_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/content_margin"
+            app:layout_constraintTop_toBottomOf="@+id/gift_tv_give"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

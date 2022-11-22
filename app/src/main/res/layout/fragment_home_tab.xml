@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginBottom="@dimen/text_margin"
+                app:banner_loop_time="15000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tab_bar"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/em_margin_20"
+                android:layout_marginBottom="@dimen/em_margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/family_hall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/icon_family_hall"
+                    android:drawablePadding="@dimen/adaptive_8dp"
+                    android:gravity="center"
+                    android:text="@string/labour_union_hall"
+                    android:textColor="@color/purple"
+                    app:layout_constraintEnd_toStartOf="@+id/Off_order_square"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <TextView
+                    android:id="@+id/Off_order_square"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/icon_off_order_square"
+                    android:drawablePadding="@dimen/adaptive_8dp"
+                    android:gravity="center"
+                    android:text="@string/Off_order_square"
+                    android:textColor="@color/orange"
+                    app:layout_constraintBottom_toBottomOf="@+id/family_hall"
+                    app:layout_constraintEnd_toStartOf="@+id/video_speed_matching"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/family_hall"
+                    app:layout_constraintTop_toTopOf="@+id/family_hall" />
+
+                <TextView
+                    android:id="@+id/video_speed_matching"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/icon_video_speed_matching"
+                    android:drawablePadding="@dimen/adaptive_8dp"
+                    android:gravity="center"
+                    android:text="@string/video_speed_matching"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@+id/Off_order_square"
+                    app:layout_constraintEnd_toStartOf="@+id/video_appointment"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/Off_order_square"
+                    app:layout_constraintTop_toTopOf="@+id/Off_order_square"
+                    app:layout_constraintVertical_bias="0.333" />
+
+                <TextView
+                    android:id="@+id/video_appointment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/icon_video_appointment"
+                    android:drawablePadding="@dimen/adaptive_8dp"
+                    android:gravity="center"
+                    android:text="@string/video_appointment"
+                    android:textColor="@color/powder"
+                    app:layout_constraintBottom_toBottomOf="@+id/video_speed_matching"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/video_speed_matching"
+                    app:layout_constraintTop_toTopOf="@+id/video_speed_matching"
+                    app:layout_constraintVertical_bias="0.4" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_marginTop="@dimen/content_margin"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:spanCount="@integer/home_tab_span_count" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

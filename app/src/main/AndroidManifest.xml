@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.iskyun.im">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许程序振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 29以后程序需要使用全屏通知 -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" /> <!-- android-sdk 11 指定微信包名 -->
+    <queries>
+        <package android:name="com.tencent.mm" />
+    </queries>
+
+    <application
+        android:name=".ImLiveApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:networkSecurityConfig"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="um.62a0676105844627b5a62957" />
+            </intent-filter>
+        </activity> <!-- 适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 适配小米（xiaomi）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.iskyun.im"
+            android:theme="@style/AppTheme.Translucent" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.iskyun.im"
+            android:theme="@style/AppTheme.Translucent" />
+        <activity android:name=".ui.common.RechargeActivity" />
+        <activity android:name=".ui.common.VipRechargeActivity" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.Fade" />
+        <activity android:name=".ui.setting.SettingActivity" />
+        <activity
+            android:name="com.mobile.auth.gatewayauth.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/authsdk_activity_dialog" /> <!-- 协议页面webview -->
+        <activity
+            android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind" /> <!-- 移动授权页 -->
+        <activity
+            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity
+            android:name=".ui.login.SmsLoginActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.login.PwdLoginActivity" />
+        <activity android:name=".ui.login.RegisterActivity" />
+        <activity
+            android:name=".ui.message.ChatActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- <activity android:name=".ui.message.AnchorInfoActivity" /> -->
+        <!-- 展示大图 -->
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
+        <activity android:name=".ui.dynamic.ReleaseDynamicsActivity" />
+        <activity android:name=".ui.dynamic.TopicActivity" />
+        <activity android:name=".ui.dynamic.TopicDynamicActivity" />
+        <activity
+            android:name=".ui.common.GifPlayActivity"
+            android:theme="@style/AppTheme.Gif" />
+        <activity android:name=".ui.mine.UserInfoActivity" />
+        <activity android:name=".ui.common.VideoPlayActivity" />
+        <activity android:name=".ui.home.AnchorInfoActivity" />
+        <activity android:name=".ui.auth.InvitationCodeActivity" />
+        <activity
+            android:name=".ui.message.VideoCallActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" />
+        <activity android:name=".ui.auth.AuthActivity" />
+        <activity android:name=".ui.setting.PriceSettingActivity" />
+        <activity android:name=".ui.auth.UploadVideoActivity" />
+        <activity android:name=".ui.auth.VerifiedActivity" />
+        <activity android:name=".ui.mine.MineAlbumActivity" />
+        <activity android:name=".ui.auth.MobileAuthActivity" />
+        <activity android:name=".ui.mine.MineDynamicActivity" />
+        <activity
+            android:name=".ui.login.AppWebActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode|fontScale"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.protocolWeb" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="${EASEMOB_APPKEY}" /> <!-- 百度地图 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="${BAIDU_APPKEY}" /> <!-- 多渠道 -->
+        <meta-data
+            android:name="CHANNEL"
+            android:value="${CHANNEL_VALUE}" /> <!-- 安装来源 -->
+        <meta-data
+            android:name="com.sharetrace.APP_KEY"
+            android:value="${SHARE_TRACE_KEY}" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- 声明SDK所需的receiver -->
+        <receiver
+            android:name="com.hyphenate.chat.EMMonitorReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver> <!-- 适配Android 7.0, 需要将下方的com.hyphenate.easeim替换为你的app包名 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".ui.mine.BrowseActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode|fontScale"
+            android:exported="true" />
+        <activity
+            android:name=".ui.common.PreviewPicturesActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/EasyPhotosFullscreenTheme" />
+        <activity android:name=".ui.mine.SelectLabelActivity" />
+        <activity android:name=".ui.setting.AboutUsActivity" />
+        <activity android:name=".ui.mine.MyGiftActivity" />
+        <activity android:name=".ui.message.CallLogActivity" />
+        <activity android:name=".ui.message.OnlineActivity" />
+        <activity android:name=".ui.message.OnlineListActivity" />
+        <activity android:name=".ui.common.ComplaintActivity" />
+        <activity
+            android:name=".ui.home.SearchActivity"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
+        <activity android:name=".ui.setting.BeautySettingActivity" />
+        <activity android:name=".ui.common.FeedbackActivity" />
+        <activity android:name=".ui.message.SystemMessageActivity" />
+        <activity android:name=".ui.mine.RevenueCenterActivity" />
+        <activity android:name=".ui.common.AristocraticPrivilegeActivity" />
+        <activity android:name=".ui.common.GuideActivity" />
+        <activity android:name=".ui.setting.BlacklistActivity" />
+        <activity android:name=".ui.mine.RevenueListActivity" />
+    </application>
+
+</manifest>

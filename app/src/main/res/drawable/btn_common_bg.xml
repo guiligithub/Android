@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#FF9E8FEB">
+    <item >
+        <selector>
+            <item android:state_enabled="false">
+                <shape>
+                    <solid android:color="@color/colorBtnEnable" />
+                    <corners android:radius="@dimen/common_btn_radius" />
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/common_btn_radius" />
+                    <gradient
+                        android:angle="0"
+                        android:centerY="0.5"
+                        android:endColor="#FF9E8FEB"
+                        android:startColor="#FF535AD6"
+                        android:centerColor="#FF9880E6"
+                        android:type="linear" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/vip_recharge_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/vip_recharge_cl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/colorAccent"
+            app:layout_scrollFlags="noScroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:id="@+id/vip_recharge_top_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_vip_top">
+
+                <ImageView
+                    android:id="@+id/vip_recharge_iv_header_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_vip_header_image"
+                    android:contentDescription="@string/app_name"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_gravity="end|top"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="70dp">
+
+                    <ImageView
+                        android:id="@+id/vip_recharge_iv_vip_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_vip_no_crown"
+                        android:contentDescription="@string/app_name"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="@+id/vip_recharge_iv_avatar"
+                        app:layout_constraintStart_toStartOf="@+id/vip_recharge_iv_avatar"
+                        app:layout_constraintBottom_toTopOf="@+id/vip_recharge_iv_avatar"
+                        />
+
+                    <com.hyphenate.easeui.widget.EaseImageView
+                        android:id="@+id/vip_recharge_iv_avatar"
+                        android:layout_width="@dimen/avatar_height"
+                        android:layout_height="@dimen/avatar_height"
+                        android:contentDescription="@string/app_name"
+                        android:src="@mipmap/em_empty_photo"
+                        app:ease_shape_type="round"
+                        android:scaleType="centerCrop"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/vip_recharge_iv_vip_icon"/>
+
+                    <TextView
+                        android:id="@+id/vip_recharge_tv_name"
+                        style="@style/AppTextWhite"
+                        android:text="@string/up_92"
+                        android:layout_marginStart="@dimen/content_margin"
+                        app:layout_constraintStart_toEndOf="@+id/vip_recharge_iv_avatar"
+                        app:layout_constraintBottom_toTopOf="@+id/vip_recharge_view_divider"/>
+
+                    <View
+                        android:id="@+id/vip_recharge_view_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_margin"
+                        app:layout_constraintBottom_toBottomOf="@+id/vip_recharge_iv_avatar"
+                        app:layout_constraintTop_toTopOf="@+id/vip_recharge_iv_avatar"/>
+
+                    <TextView
+                        android:id="@+id/vip_recharge_tv_status"
+                        style="@style/AppTextWhite"
+                        android:text="@string/up_92"
+                        android:textSize="@dimen/small_size"
+                        android:layout_marginStart="@dimen/content_margin"
+                        app:layout_constraintStart_toEndOf="@+id/vip_recharge_iv_avatar"
+                        app:layout_constraintTop_toBottomOf="@+id/vip_recharge_view_divider"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/vip_recharge_rv_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_margin"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vip_recharge_iv_avatar" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/vip_recharge_rv_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/content_margin"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vip_recharge_rv_right" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@id/tl_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                app:layout_collapseMode="pin"
+                app:contentInsetEnd="0dp"
+                app:contentInsetStart="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/tl_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/setting"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:paddingBottom="@dimen/content_margin"
+                        android:paddingTop="@dimen/content_margin"
+                        android:paddingEnd="@dimen/activity_horizontal_margin"
+                        android:src="@mipmap/icon_back_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tl_title"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/title_message"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/title_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vip_recharge_cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.common.VipRechargeActivity"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vip_recharge_rv_vip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:background="@drawable/svip_white_bg"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vip_recharge_tv_recharge_tip"
+                style="@style/AppText"
+                android:layout_gravity="center"
+                android:text="@string/vip_recharge_explain"
+                android:textColor="@color/colorContent"
+                android:textSize="@dimen/small_size"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="@+id/vip_recharge_rv_vip"
+                app:layout_constraintTop_toBottomOf="@+id/vip_recharge_rv_vip"/>
+
+
+            <Button
+                android:id="@+id/vip_recharge_btn_pay"
+                style="@style/AppBtn"
+                android:background="@drawable/btn_yellow_bg"
+                android:layout_width="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:text="@string/activate_now"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vip_recharge_tv_recharge_tip" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vip_recharge_btn_pay" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_2">
+
+    <FrameLayout
+        android:id="@+id/anchor_detail_cl_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@mipmap/icon_aristocratic_privilege_bgs"
+        app:layout_constraintHeight_percent="0.37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/aristocratic_iv_vip_type"
+        android:layout_width="160dp"
+        android:layout_height="85dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/icon_aristocratic_privilege_vip_bg"
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/anchor_detail_cl_header"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/tl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/tl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/setting"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/content_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/content_margin"
+                android:src="@mipmap/icon_back_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tl_title"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/aristocratic_privilege"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/title_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rlyout"
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="1dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tl_header">
+
+        <com.iskyun.im.widget.SlidingTabLayout
+            android:id="@+id/aristocratic_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="@dimen/tab_indicator_height"
+            android:paddingBottom="@dimen/tab_indicator_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tl_indicator_color="@color/gold_3"
+            app:tl_indicator_corner_radius="2dp"
+            app:tl_indicator_height="@dimen/tab_indicator_height"
+            app:tl_indicator_width="@dimen/tab_indicator_width"
+            app:tl_tab_space_equal="true"
+            app:tl_textBold="SELECT"
+            app:tl_textSelectColor="@color/gold_3"
+            app:tl_textSize="@dimen/content_size"
+            app:tl_textUnselectColor="@color/grey" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/aristocratic_vPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        app:layout_constraintBottom_toTopOf="@+id/aristocratic_privilege_vip_up"
+        app:layout_constraintTop_toBottomOf="@+id/anchor_detail_cl_header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aristocratic_privilege_vip_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="@dimen/content_margin"
+        android:paddingTop="@dimen/content_margin">
+
+        <LinearLayout
+            android:id="@+id/ll_balance_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开通"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:drawablePadding="@dimen/adaptive_5dp"
+                />
+            <TextView
+                android:id="@+id/aristocratic_tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="88"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:drawablePadding="@dimen/adaptive_5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RMB/月"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:drawablePadding="@dimen/adaptive_5dp"
+                />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/mine_tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="续费有赠送"
+            android:textColor="@color/colorRipple"
+            android:textSize="@dimen/small_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/ll_balance_tips"
+            app:layout_constraintTop_toBottomOf="@+id/ll_balance_tips" />
+
+        <!--充值按钮-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:visibility="gone"
+            android:src="@mipmap/icon_aristocratic_btn_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/mine_tv_balance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ll_balance_tips"
+            android:layout_marginRight="@dimen/adaptive_15dp"
+            />
+
+        <TextView
+            android:id="@+id/aristocratic_tv_recharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_aristocratic_btn_bg"
+            android:gravity="center"
+            android:text="@string/activate_now"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/gold_2"
+            app:layout_constraintBottom_toBottomOf="@+id/mine_tv_balance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ll_balance_tips"
+            android:layout_marginRight="@dimen/adaptive_15dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

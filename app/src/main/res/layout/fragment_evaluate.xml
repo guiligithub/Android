@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_bg"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/evaluate_tv_title"
+        style="@style/AppTextBlack"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.iskyun.im.widget.RatingStarView
+        android:id="@+id/evaluate_rsv_star"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/evaluate_tv_title"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:rsv_starForegroundColor="@color/colorAccent"
+        app:rsv_starBackgroundColor="#999999"
+        app:rsv_rating="5"
+        app:rsv_starNum="5"
+        app:rsv_enableSelectRating="true"
+        app:rsv_drawStrokeForEmptyStar="false"
+        app:rsv_drawStrokeForFullStar="false"
+        app:rsv_drawStrokeForHalfStar="true"/>
+    
+    <Button
+        android:id="@+id/evaluate_btn"
+        style="@style/AppBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@null"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:text="@string/evaluate"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/evaluate_rsv_star"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

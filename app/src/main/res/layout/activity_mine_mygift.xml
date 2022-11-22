@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple1">
+
+    <ImageView
+        android:id="@+id/tl_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/setting"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/login_tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/login_tv_title"
+        />
+
+    <TextView
+        android:id="@+id/login_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="收到的礼物"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/verified_v_identity_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@drawable/mine_shape_white_bg"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/adaptive_80dp"
+            android:layout_marginBottom="@dimen/adaptive_45dp"
+            android:padding="@dimen/dp_10"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="4"
+            />
+
+        <TextView
+            android:id="@+id/mygift_tv_gift_num"
+            android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_btn_height"
+            android:text="共收到0件礼物"
+            android:textColor="@color/purple1"
+            android:textSize="@dimen/text_size"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.hyphenate.easeui.widget.EaseImageView
+        android:id="@+id/user_info_iv_avatar"
+        android:layout_width="@dimen/adaptive_69dp"
+        android:layout_height="@dimen/adaptive_69dp"
+        android:layout_marginTop="@dimen/dp_10"
+        app:ease_shape_type="round"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@+id/login_tv_title"
+        app:layout_constraintStart_toStartOf="@+id/login_tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/login_tv_title"
+        app:srcCompat="@mipmap/em_empty_photo" />
+
+    <TextView
+        android:id="@+id/user_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名字"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="@dimen/adaptive_5dp"
+        app:layout_constraintEnd_toEndOf="@+id/user_info_iv_avatar"
+        app:layout_constraintStart_toStartOf="@+id/user_info_iv_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/user_info_iv_avatar"
+        />
+
+
+    <TextView
+        android:id="@+id/empty_gift_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@mipmap/empty_gift_box"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/empty_gift_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

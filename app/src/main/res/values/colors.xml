@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="colorAccent">#706ADE</color>
+    <color name="colorPrimary">#ff577a</color>
+
+    <color name="colorTitle">#333</color>
+    <color name="colorText">#333</color>
+    <color name="colorTitleWhite">@color/white</color>
+    <color name="colorSubTitle">#666</color>
+    <color name="colorContent">#888</color>
+    <color name="colorSubContent">#aaa</color>
+    <color name="colorBtnEnable">#ccc</color>
+    <color name="colorHint">#999</color>
+    <color name="colorToast">@color/white</color>
+
+    <color name="colorTabSelect">@color/white</color>
+    <color name="colorTabUnSelect">@color/white</color>
+    <color name="colorDivider">#f0f0f0</color>
+
+    <color name="colorNavText">#333</color>
+    <color name="colorNavTextSelector">@color/colorAccent</color>
+    <color name="colorRefresh">@color/colorAccent</color>
+    <color name="colorRipple">#ff81ab</color>
+
+    <color name="bg_start_color">#ff577a</color>
+    <color name="bg_end_color">#ff81ab</color>
+    <color name="bg_center_color">#ff6199</color>
+    <color name="bg_toast_color">#88000000</color>
+
+    <color name="gray">#ffe2e2e2</color>
+    <color name="gray_bg">#fff3f3f3</color>
+    <color name="gift_gray">#fff6f6f6</color>
+    <color name="gift_color">#0D0921</color>
+    <color name="gift_text_color">#A98CF6</color>
+
+    <!--dialog-->
+    <color name="dialog_color_btn_bg_select">@color/colorSubContent</color>
+    <color name="dialog_color_btn_bg_normal">@color/white</color>
+    <color name="dialog_color_btn_stroke">@color/white</color>
+    <color name="dialog_color_normal">@color/colorContent</color>
+    <color name="shape1">#ff577a</color>
+    <color name="shape2">#ff81ab</color>
+    <color name="shape3">#ff6199</color>
+
+    <color name="colorgrey">#9b9b9b</color>
+    <color name="white_grey">#f5f5f5</color>
+
+    <color name="blue_purple">#706ADE</color>
+    <color name="grey">#FF979494</color>
+
+    <color name="purple">#FFB04DFF</color>
+    <color name="orange">#FFFE9E3D</color>
+    <color name="blue">#FF6385FE</color>
+    <color name="powder">#FFFF5F79</color>
+    <color name="golden">#FFF2CB51</color>
+    <color name="text_golden">#FFF4DBC3</color>
+    <color name="svip_golden">#FFAC844B</color>
+    <color name="s_vip_header_bg_color">#393741</color>
+    <color name="s_vip_bg_color">#171717</color>
+    <color name="s_vip_item_bg_color">#3C3943</color>
+    <color name="purple1">#FF7268DA</color>
+    <color name="purple2">#FF6262D9</color>
+    <color name="grey_1">#FFF1F2F4</color>
+    <color name="back_1">#FF473844</color>
+    <color name="back_2">#FF252531</color>
+    <color name="gold_2">#FF7E5D33</color>
+    <color name="gold_3">#FFFDCD85</color>
+    <color name="small_text">#FF867DDF</color>
+    <color name="gold_4">#FFD4CCCC</color>
+
+</resources>

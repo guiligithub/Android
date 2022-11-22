@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="complaint"
+            type="com.iskyun.im.data.bean.Complaint" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:padding="@dimen/activity_horizontal_margin"
+            >
+
+
+            <TextView
+                android:id="@+id/complaint_tv_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/adaptive_5dp"
+                android:text="@string/reported_user_id"
+                android:textSize="@dimen/em_margin_15"
+                android:textColor="@color/colorText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/user_info_edit"
+                style="@style/AppMinEdit"
+                android:gravity="top"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textSize="10sp"
+                android:padding="@dimen/tab_margin"
+                android:text="@={complaint.informerId}"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/white_gray_radius_bg"
+                app:layout_constraintStart_toEndOf="@+id/complaint_tv_user"
+                app:layout_constraintTop_toTopOf="@+id/complaint_tv_user"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/complaint_tv_required"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/required"
+                android:textColor="@color/colorText"
+                android:padding="@dimen/adaptive_5dp"
+                app:layout_constraintStart_toEndOf="@+id/user_info_edit"
+                app:layout_constraintTop_toTopOf="@+id/user_info_edit"
+                />
+
+            <TextView
+                android:id="@+id/complaint_tv_contact_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/adaptive_5dp"
+                android:layout_marginTop="@dimen/adaptive_10dp"
+                android:text="@string/contact_number"
+                android:textSize="@dimen/em_margin_15"
+                android:textColor="@color/colorText"
+                app:layout_constraintLeft_toLeftOf="@+id/complaint_tv_user"
+                app:layout_constraintTop_toBottomOf="@+id/complaint_tv_user"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/contact_number_edit"
+                style="@style/AppMinEdit"
+                android:gravity="top"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textSize="10sp"
+                android:padding="@dimen/tab_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="@={complaint.telephoneNumber}"
+                android:textColor="@color/colorText"
+                android:background="@drawable/white_gray_radius_bg"
+                app:layout_constraintStart_toEndOf="@+id/complaint_tv_contact_number"
+                app:layout_constraintTop_toTopOf="@+id/complaint_tv_contact_number"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/contact_number_tv_required"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/required"
+                android:textColor="@color/colorText"
+                android:padding="@dimen/adaptive_5dp"
+                app:layout_constraintStart_toEndOf="@+id/contact_number_edit"
+                app:layout_constraintTop_toTopOf="@+id/contact_number_edit"
+                />
+
+            <View
+                android:id="@+id/verified_h_divider_1"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                android:background="@color/purple1"
+                app:layout_constraintLeft_toLeftOf="@+id/complaint_tv_contact_number"
+                app:layout_constraintTop_toBottomOf="@+id/complaint_tv_contact_number"/>
+
+            <TextView
+                android:id="@+id/tv_album"
+                style="@style/AppText"
+                android:layout_marginStart="@dimen/adaptive_5dp"
+                android:text="@string/reason_for_reporting"
+                android:padding="@dimen/adaptive_5dp"
+                android:textColor="@color/colorText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/verified_h_divider_1"
+                app:layout_constraintTop_toTopOf="@+id/verified_h_divider_1" />
+
+            <TextView
+                android:id="@+id/tv_Mandatory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mandatory"
+                android:textColor="@color/colorText"
+                android:padding="@dimen/adaptive_5dp"
+                app:layout_constraintStart_toEndOf="@+id/tv_album"
+                app:layout_constraintTop_toTopOf="@+id/tv_album" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_album"
+                app:layout_constraintTop_toBottomOf="@+id/tv_album"
+                >
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    style="@style/package_radio_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorContent"
+                    android:button="@null"
+                    android:padding="@dimen/adaptive_6dp"
+                    android:text="@string/spread_pornography"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    style="@style/package_radio_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorContent"
+                    android:button="@null"
+                    android:padding="@dimen/adaptive_6dp"
+                    android:text="@string/advertisement"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    style="@style/package_radio_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorContent"
+                    android:button="@null"
+                    android:padding="@dimen/adaptive_6dp"
+                    android:text="@string/swindle"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    style="@style/package_radio_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorContent"
+                    android:button="@null"
+                    android:padding="@dimen/adaptive_6dp"
+                    android:text="@string/other"
+                    />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/verified_h_divider_2"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                android:background="@color/purple1"
+                app:layout_constraintLeft_toLeftOf="@+id/radioGroup"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+
+            <TextView
+                android:id="@+id/tv_reporting_instructions"
+                style="@style/AppText"
+                android:layout_marginStart="@dimen/adaptive_9dp"
+                android:text="@string/reporting_instructions"
+                android:padding="@dimen/adaptive_5dp"
+                android:textColor="@color/colorText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/verified_h_divider_2"
+                app:layout_constraintTop_toTopOf="@+id/verified_h_divider_2" />
+
+            <TextView
+                android:id="@+id/contact_number_tv_required_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/required"
+                android:textColor="@color/colorText"
+                android:padding="@dimen/adaptive_5dp"
+                app:layout_constraintStart_toEndOf="@+id/tv_reporting_instructions"
+                app:layout_constraintTop_toTopOf="@+id/tv_reporting_instructions" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/report_info_edit"
+                style="@style/AppEdit"
+                android:textColor="@color/colorText"
+                android:textSize="13sp"
+                android:layout_height="80dp"
+                android:layout_marginTop="@dimen/adaptive_5dp"
+                android:gravity="top"
+                android:inputType="text"
+                android:hint="@string/reporting_instructions_fill_in"
+                android:padding="@dimen/adaptive_8dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:text="@={complaint.reportExplain}"
+                android:background="@drawable/white_gray_radius_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_reporting_instructions"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/user_info_tv_count"
+                style="@style/AppText"
+                android:textSize="@dimen/small_size"
+                android:textColor="@color/colorContent"
+                android:layout_marginEnd="@dimen/content_margin"
+                android:layout_marginBottom="@dimen/content_margin"
+                android:text="0/50"
+                app:layout_constraintEnd_toEndOf="@+id/report_info_edit"
+                app:layout_constraintBottom_toBottomOf="@+id/report_info_edit"/>
+
+            <View
+                android:id="@+id/verified_h_divider_3"
+                android:layout_width="3dp"
+                android:layout_height="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                android:background="@color/purple1"
+                app:layout_constraintLeft_toLeftOf="@+id/report_info_edit"
+                app:layout_constraintTop_toBottomOf="@+id/report_info_edit"/>
+
+            <TextView
+                android:id="@+id/tv_album_3"
+                style="@style/AppText"
+                android:layout_marginStart="@dimen/adaptive_5dp"
+                android:text="@string/upload_screenshot"
+                android:padding="@dimen/adaptive_5dp"
+                android:textColor="@color/colorText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/verified_h_divider_3"
+                app:layout_constraintTop_toTopOf="@+id/verified_h_divider_3" />
+            <TextView
+                android:id="@+id/screenshot_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/4"
+                android:padding="@dimen/adaptive_5dp"
+                android:textSize="@dimen/adaptive_12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_album_3" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/complaint_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_album_3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_album_3"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                android:text="@string/colleagues_pull_black"
+                android:textColor="@color/colorText"
+                app:layout_constraintLeft_toLeftOf="@+id/complaint_recyclerview"
+                app:layout_constraintTop_toBottomOf="@+id/complaint_recyclerview"
+                />
+
+            <ImageView
+                android:id="@+id/tab_iv_block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_block"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                android:gravity="center"
+                android:textSize="@dimen/adaptive_13dp"
+                android:text="@string/customer_service_processing"
+                app:layout_constraintTop_toBottomOf="@+id/tv_block"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <Button
+                android:id="@+id/user_info_submit"
+                style="@style/AppBtn"
+                android:text="@string/submit"
+                android:layout_marginStart="@dimen/button_margin"
+                android:layout_marginEnd="@dimen/button_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_explain"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

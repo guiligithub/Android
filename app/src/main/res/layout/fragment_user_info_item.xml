@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/top_radius_white_bg">
+
+    <TextView
+        android:id="@+id/item_tv_title"
+        style="@style/AppText"
+        android:textSize="@dimen/title_size"
+        android:text="1111"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingTop="@dimen/content_margin"
+        android:paddingBottom="@dimen/content_margin"/>
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_below="@+id/item_tv_title"
+        android:background="@color/colorAccent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/divider_1"
+        android:layout_above="@+id/item_tv_cancel"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    <TextView
+        android:id="@+id/item_tv_cancel"
+        style="@style/AppText"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_btn_height"
+        android:text="@string/cancel"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+</RelativeLayout>

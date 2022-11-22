@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="header" />
+    <item type="id" name="tab_title" />
+    <item type="id" name="tl_header" />
+    <item type="id" name="swipe_refresh" />
+    <item type="id" name="recycler_view" />
+
+    <!-- 会话列表长按菜单项id -->
+    <!-- 会话列表条目置为已读 -->
+    <item name="action_con_make_read" type="id"/>
+    <!-- 会话列表条目置顶 -->
+    <item name="action_con_make_top" type="id"/>
+    <!-- 会话列表条目取消置顶 -->
+    <item name="action_con_cancel_top" type="id"/>
+    <!-- 会话列表条目删除 -->
+    <item name="action_con_delete" type="id"/>
+
+    <item name="chat_extend_album" type="id"/>
+    <item name="chat_extend_video" type="id"/>
+    <item name="chat_extend_voice" type="id"/>
+    <item name="chat_extend_gift" type="id"/>
+
+    <item name="action_chat_delete" type="id"/>
+    <item name="action_chat_copy" type="id"/>
+
+    <item type="id" name="picture_recyclerview" />
+</resources>

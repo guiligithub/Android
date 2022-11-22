@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="loginBody"
+            type="com.iskyun.im.data.req.LoginBody" />
+
+        <variable
+            name="authCodeViewModel"
+            type="com.iskyun.im.ui.login.viewmodel.AuthCodeViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/login_iv_header_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintHeight_percent="0.33"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_sms_login_bg" />
+
+        <ImageView
+            android:id="@+id/tl_back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/setting"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/icon_back_black"
+            app:layout_constraintBottom_toBottomOf="@+id/login_tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/login_tv_title"
+            />
+
+        <TextView
+            android:id="@+id/login_sms_pwd_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pwd_login"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/login_tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/login_tv_title"
+            />
+
+        <TextView
+            android:id="@+id/login_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/phone_login"
+            android:textColor="@color/colorTitle"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:textSize="@dimen/title_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.67"
+        android:background="@drawable/white_radius_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_view_heights"
+                android:gravity="bottom"
+                android:paddingStart="@dimen/view_margin"
+                android:paddingEnd="@dimen/view_margin"
+                android:layout_marginTop="@dimen/adaptive_43dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/login_edit_bg"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/login_et_phone"
+                    style="@style/AppEdit"
+                    android:hint="@string/input_phone_number"
+                    android:drawablePadding="@dimen/content_margin"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:text="@={loginBody.loginInfo}" />
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_view_heights"
+                android:gravity="bottom"
+                android:background="@drawable/login_edit_bg"
+                android:layout_marginTop="@dimen/adaptive_15dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:paddingStart="@dimen/view_margin"
+                android:paddingEnd="@dimen/view_margin">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/login_et_code"
+                    style="@style/AppEdit"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/login_v_divider"
+                    android:drawablePadding="@dimen/content_margin"
+                    android:hint="@string/input_auth_code"
+                    android:inputType="phone"
+                    android:maxLength="6"
+                    android:text="@={loginBody.loginSecret}" />
+
+                <View
+                    android:id="@+id/login_v_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/activity_horizontal_margin"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/login_tv_send"
+                    android:background="@color/small_text"
+
+                    />
+
+                <TextView
+                    android:id="@+id/login_tv_send"
+                    style="@style/AppText"
+                    android:layout_width="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:enabled="@{TextUtils.isEmpty(loginBody.loginInfo) ? false : true}"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="@{authCodeViewModel.countDownStatus ? authCodeViewModel.countObserve+@string/second: @string/send_auth_code}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/sub_title_size" />
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/login_btn_sign"
+                style="@style/AppBtn"
+                android:layout_marginTop="@dimen/adaptive_30dp"
+                android:enabled="@{(TextUtils.isEmpty(loginBody.loginSecret) || TextUtils.isEmpty(loginBody.loginInfo)) ? false : true }"
+                android:onClick="onClick"
+                android:text="@string/login"
+                tools:ignore="UsingOnClickInXml" />
+
+            <TextView
+                android:id="@+id/login_tv_other_tips"
+                style="@style/AppText"
+                android:textSize="@dimen/sub_title_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/adaptive_30dp"
+                android:text="@string/other_way_login"
+                android:textColor="@color/small_text"/>
+
+            <ImageView
+                android:id="@+id/login_iv_wx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/app_name"
+                android:onClick="onClick"
+                android:src="@mipmap/icon_login_wx_round_2" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/adaptive_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <CheckBox
+                android:id="@+id/login_sm_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/check_box_style"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同意樱桃"
+                android:textSize="@dimen/small_size"
+                />
+            <TextView
+                android:id="@+id/login_sm_user_agreements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_agreements"
+                android:textSize="@dimen/small_size"
+                android:textColor="@color/small_text"
+                />
+            <TextView
+                android:id="@+id/login_sm_privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_policys"
+                android:textSize="@dimen/small_size"
+                android:textColor="@color/small_text"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
